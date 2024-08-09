@@ -39,8 +39,8 @@ export const Navbar = () => {
             {
                 toogle && 
                 <button class="bg-transparent hover:bg-orange-600  text-[#49557e] font-bold hover:text-white py-2 px-2.5 w-40 border border-orange-600  hover:border-transparent rounded-full "
-                        onClick={() => setToogle(!toogle)}
-                >
+                onClick={()=>document.getElementById('my_modal_1').showModal()}       
+                         >
                 sign-in
 </button>
             }
