@@ -11,7 +11,7 @@ export const Navbar = () => {
     return (
     <nav className="  h-20 w-full sm:px-[100px]  px-[30px] flex justify-between items-center ">
  
-            <div className=" text-orange-600   lg:text-5xl text-2xl  font-extrabold   ">
+            <div className=" text-orange-600   lg:text-5xl text-4xl  font-extrabold   ">
                     Tomato. 
             </div>
             <div className=" hidden  items-center  gap-3 xl:flex">
