@@ -3,7 +3,7 @@ import { NavFeatures } from "../../constants"
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosNotifications } from "react-icons/io";
-import { asserts } from "../../constants";
+
 
 export const Navbar = () => {
   const [menu, setMenu] = useState("home");
