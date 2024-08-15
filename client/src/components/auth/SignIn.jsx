@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 
-
-export const SignIn = () => {
+export const SignIn = ({setIsOpen}) => {
   
   const Showpassword = () => {
     var x = document.getElementById("password");
@@ -13,13 +13,10 @@ export const SignIn = () => {
   
   
   return (
-    <dialog id="my_modal_1" className="modal flex justify-center items-center">
-    <div className="modal-box h-[450px] w-[430px] ">
-      <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn btn-sm btn-circle btn-ghost absolute right-3 top-6  text-3xl  ">✕</button>
-      </form>
-      <h3 className="font-bold text-3xl">  Sign In </h3>
+    <div className=" w-[430px] ">
+    {/*
+        <h3 className="font-bold text-3xl">  Sign In </h3>
+    */}
      <label className="input  border-[#49557e]  mt-10  flex items-center gap-2">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -47,18 +44,18 @@ export const SignIn = () => {
   <input type="password" className="grow" id="password" placeholder="password" />
   <input type="checkbox" className="grow w-5 h-5"  onClick={Showpassword } />
 </label>
-<button className="btn  bg-orange-600 mx-auto hover:bg-orange-600 text-white font-bold text-2xl h-[48px]  w-full mt-10  ">  Create Account </button>
+<button className="btn  bg-orange-600 mx-auto hover:bg-orange-600 text-white font-bold text-2xl h-[48px]  w-full mt-10  ">  sign in </button>
   <input type="checkbox" className="mt-3 w-4                                                                                                                                                                                                                                                                                                                                                                                                                                               h-4  "  /> 
   <span className="" >  By continuing . i agree to the terms of use 
       & privacy policy
      </span>
 
-<div className="flex mt-5 gap-4">
-<h1  className="" >  Already have an account ? </h1> 
-<span onClick={()=>document.getElementById('my_modal_2').showModal()} className="text-orange-700 cursor-pointer"> Create account  </span>
-</div>
+     <div className="flex mt-5 gap-4">
+  <h1  className="" >  D'ont  have an account ? </h1> 
+      <Link to={"/sign-up"} 
+       className="text-orange-700 cursor-pointer"> create account  </Link>
+  </div>
     
     </div>    
-  </dialog>
   )
 }

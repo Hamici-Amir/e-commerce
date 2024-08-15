@@ -1,17 +1,33 @@
-import { SignIn } from "./components/auth/SignIn"
-import { SignUp } from "./components/auth/SignUp"
-import { Navbar } from "./components/Navbar/Navbar"
-import Home from "./pages/Home"
+
+import { Route ,Routes  } from "react-router-dom"
+import { ErrorRoute, Home, Login, Signup } from "./pages"
+import { Footer, Navbar } from "./components/Navbar"
+
 
 function App() {
 
 
   return (
     <>
-     <Navbar />
-     <Home/>
-     <SignIn />
-     <SignUp />
+      <Routes>
+          <Route path="/" exact element={
+            <>
+                <Navbar />
+                <Home />
+                <Footer />
+            </>
+            }/>
+
+          <Route path="/sign-in" element={<Login />}  />
+          <Route path="/sign-up" element={<Signup />}  /> 
+          <Route path="/*" element={<ErrorRoute /> } />     
+    
+        </Routes>
+  
+       
+    
+   
+     
     </>
   )
 }

@@ -7,6 +7,9 @@ import { IoIosNotifications } from "react-icons/io";
 export const Navbar = () => {
   const [menu, setMenu] = useState("home");
   const [toogle, setToogle] = useState(true)
+  
+
+
     return (
     <nav className="  h-20 w-full sm:px-[100px]  px-[30px] flex justify-between items-center ">
  
@@ -38,11 +41,13 @@ export const Navbar = () => {
             }
             {
                 toogle && 
-                <button class="bg-transparent hover:bg-orange-600  text-[#49557e] font-bold hover:text-white py-2 px-2.5 w-40 border border-orange-600  hover:border-transparent rounded-full "
-                onClick={()=>document.getElementById('my_modal_1').showModal()}       
-                         >
+                
+                <Link class="bg-transparent hover:bg-orange-600  text-[#49557e] font-bold hover:text-white py-2 px-2.5 w-40 border border-orange-600  hover:border-transparent rounded-full "
+                        to={"/sign-in"}                 
+                 > 
+                        
                 sign-in
-</button>
+                </Link>
             }
             </div>
         
