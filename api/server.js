@@ -7,19 +7,24 @@ import dotenv from "dotenv";
 // Data base 
 import { connectDB } from "./db/connectDB.js";
 
+// Routes
+import AuthRouter from "./routes/Auth.route.js";
+
+
+
 dotenv.config();
 const app = express();
 const port = process.env.port || 5000;
 
+app.use(express.json());
+
+
+app.use("/api/auth/",AuthRouter);
 
 
 
 
 
-app.get("/:id",(req,res) => {
-    
-    res.send(`<h1>  ${req.params.id} </h1> `)
-})
 
 app.listen(port,() => {
     connectDB();
