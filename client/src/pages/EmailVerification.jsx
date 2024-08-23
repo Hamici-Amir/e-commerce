@@ -41,7 +41,7 @@ import { useState,useRef } from "react";
     const error = false
     const isLoading = !true
   return (
-    <div className="h-screen items-center flex justify-center w-full Bg bg-cover  ">
+    <div className="h-screen items-center fixed flex justify-center w-full Bg bg-cover  ">
      <div className='max-w-md w-full bg-orange-500 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden'>
 			<motion.div
 				initial={{ opacity: 0, y: -50 }}
