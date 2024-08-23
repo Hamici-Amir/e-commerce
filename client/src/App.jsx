@@ -1,6 +1,6 @@
 
 import { Route ,Routes  } from "react-router-dom"
-import { ErrorRoute, Home, Login, Signup } from "./pages"
+import { EmailVerification, ErrorRoute, Home, Login, Signup } from "./pages"
 import { Footer, Navbar } from "./components/Navbar"
 
 
@@ -20,8 +20,10 @@ function App() {
 
           <Route path="/sign-in" element={<Login />}  />
           <Route path="/sign-up" element={<Signup />}  /> 
+          <Route path="/verifiy" element={<EmailVerification />} />
           <Route path="/*" element={<ErrorRoute /> } />     
-    
+
+
         </Routes>
   
        
