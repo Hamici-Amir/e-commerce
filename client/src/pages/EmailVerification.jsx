@@ -3,7 +3,7 @@ import { useState,useRef } from "react";
 
  const EmailVerification = () => {
     const [code, setCode] = useState(["", "", "", "", "", ""]);
-    const error = false
+
     const inputRefs = useRef([]);
     const handleChange = (index, value) => {
 		const newCode = [...code];
@@ -36,6 +36,9 @@ import { useState,useRef } from "react";
 			inputRefs.current[index - 1].focus();
 		}
 	};
+
+
+    const error = false
     const isLoading = !true
   return (
     <div className="h-screen items-center flex justify-center w-full Bg bg-cover  ">
