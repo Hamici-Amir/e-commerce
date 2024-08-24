@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { NavFeatures } from "../../constants"
 import { useState } from "react";
-import { CiSearch } from "react-icons/ci";
+
 import { IoIosNotifications } from "react-icons/io";
 
 export const Navbar = () => {
@@ -11,15 +11,27 @@ export const Navbar = () => {
 
 
     return (
-    <nav className="  h-20 w-full sm:px-[100px]  px-[30px] flex justify-between items-center ">
+    <nav className="  h-20 w-full sm:px-[100px]  border-b border-black px-[30px] flex justify-between items-center ">
  
             <div className=" text-orange-600   lg:text-5xl text-4xl  font-extrabold   ">
                     Tomato. 
             </div>
-            <div className=" hidden  items-center  gap-3 xl:flex">
-            {NavFeatures.map((item,index) => (
+            <div className=" hidden  items-center relative gap-3 xl:flex">
+                
+                <input 
+                type="text" 
+                className="w-[500px] h-[60px] border-none  px-5 bg-[#E4E4E4] rounded-[50px] "
+                placeholder="Search anything..."
+                />
+                <button className="bg-[#fff] cursor-pointer  left-[376px] text-black absolute top-[5px] w-[120px] h-[50px] rounded-[50px] font-bold text-2xl  "> Search </button>
+               
+            </div>
+
+            <div className=" w-[370px] gap-[40px] flex items-center  text-[#49557e] ">
+            
+                {NavFeatures.map((item,index) => (
                 <Link   key={index} to={"/"}>
-                        <div className={` px-3  transition-transform ${ menu == item ? "underline":""}  text-2xl text-[#49557e] `} 
+                        <div className={`    transition-transform ${ menu == item ? "underline":""}  text-xl text-[#49557e] `} 
                             onClick={() => setMenu(item)}
                         >
                             {item}
@@ -27,26 +39,18 @@ export const Navbar = () => {
                 </Link>
 
             ) )}
-            </div>
-
-            <div className=" w-[132px]  flex gap-4 items-center text-[#49557e] ">
-            <CiSearch  size={ toogle ? 80:40}   className=" cursor-pointer " />
-            {
-                       ! toogle && (<>
-                                <IoIosNotifications size={40} className="  cursor-pointer " />
-                                <button class=" cursor-pointer  text-white  font-bold  rounded-full">
-                                        <img src="https://lh3.googleusercontent.com/a/ACg8ocIB0yJT_ZshZKJZtvUQpPTRoZy2VjVyZ8w0cnYo6nvhTyHy-w=s288-c-no" alt="" width={40} className=" rounded-full"  />
-                                </button>
-                        </>)
-            }
+                                
             {
                 toogle && 
                 
-                <Link class="bg-transparent hover:bg-orange-600  text-[#49557e] font-bold hover:text-white py-2 px-2.5 w-40 border border-orange-600  hover:border-transparent rounded-full "
+                <Link class="bg-transparent hover:bg-orange-600   text-[#49557e] font-bold hover:text-white py-2 px-2.5 w-28 border border-orange-600  hover:border-transparent rounded-full "
                         to={"/sign-in"}                 
                  > 
-                        
-                sign-in
+                                <span className=" mx-auto px-4" >
+                                sign-in
+
+                                </span>
+                
                 </Link>
             }
             </div>

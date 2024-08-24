@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 export const SignUp = ( {setIsOpen} ) => {
-  
+    
+	const navigate = useNavigate();
+
     const Showpassword = () => {
       var x = document.getElementById("password");
       if (x.type === "password") {
@@ -57,7 +59,9 @@ export const SignUp = ( {setIsOpen} ) => {
     <input type="password" className="grow" id="password" placeholder="password" />
     <input type="checkbox" className="grow w-5 h-5"  onClick={Showpassword } />
   </label>
-  <button className="btn  bg-orange-600 mx-auto hover:bg-orange-600 text-white font-bold text-2xl h-[48px]  w-full mt-10  ">  Create Account </button>
+  <button className="btn  bg-orange-600 mx-auto hover:bg-orange-600 text-white font-bold text-2xl h-[48px]  w-full mt-10  "
+    onClick={() => {navigate("/verifiy")}}
+  >  Create Account </button>
     <input type="checkbox" className="mt-3 w-4                                                                                                                                                                                                                                                                                                                                                                                                                                               h-4  "  /> 
     <span className="" >  By continuing . i agree to the terms of use 
         & privacy policy

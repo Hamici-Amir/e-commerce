@@ -12,5 +12,9 @@
 .X{
    background-image: url("./assets//frontend_assets/food_23.png");
 }
+input::placeholder {
+   color: black;
+   font-size: large;
+ }
 
 
