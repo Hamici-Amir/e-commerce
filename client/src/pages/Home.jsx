@@ -2,7 +2,7 @@
 
 const Home = () => {
   return (
-    <div className="h-[590px] mt-10 bg-cover
+    <div className="h-[590px] mt-10 bg-cover 
           w-[80%] flex flex-col gap-4 mx-auto rounded-[20px] Bg">
               
       <h1 className=" text-white font-semibold text-7xl mt-[160px] px-[80px] ">  Order your   </h1>
