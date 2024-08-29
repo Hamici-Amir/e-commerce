@@ -52,8 +52,9 @@ function App() {
           <Route path="/*" element={<ErrorRoute /> } />     
            <Route path="/dashboard" element={
             <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
+           <Dashboard />
+
+            </ProtectedRoute>
            }  />    
 
         </Routes>
@@ -93,3 +94,10 @@ const RedirectAuthenticatedUser = ({ children }) => {
 
   return children;
 };
+
+/*
+              <ProtectedRoute>
+                <Dashborad />
+          </ProtectedRoute>
+
+*/

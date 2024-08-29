@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
-	{
+	{	
+		profilePic:{
+				type:String,
+				default:'https://avatar.iran.liara.run/public/boy?username=hatel'
+		},
 		email: {
 			type: String,
 			required: true,
