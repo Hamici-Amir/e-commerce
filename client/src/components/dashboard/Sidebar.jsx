@@ -10,7 +10,6 @@ import { useAuthStore } from "../../zustand/store";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-
 const icons = [<MdSpaceDashboard size={23}  />,<LuListTodo size={23} />,<RiSendPlaneFill size={23} />,<FaShoppingCart size={23} />,<CgProfile size={23} />,<FaHome size={23} />,<CgLogOut size={23} />,]
 
 
@@ -31,7 +30,7 @@ export const Sidebar = () => {
                     Tomato. 
                     
             </div>
-            <div className="mt-16 gap-1 flex flex-col">
+            <div className="mt-16 gap-1 flex flex-col" key={"xxxx"}>
                 
             {SideFeatures.map((item,index) => (
                 <>
