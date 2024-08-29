@@ -10,7 +10,11 @@
    background-image: url("./assets/frontend_assets/header_img.png");
 }
 .X{
-   background-image: url("./assets//frontend_assets/food_23.png");
+   background-image: url("./assets//frontend_assets/food_12.png");
 }
+input::placeholder {
+   color: black;
+   font-size: large;
+ }
 
 
