@@ -1,13 +1,20 @@
+
+import React from 'react'; 
 import { Link } from "react-router-dom"
-import { NavFeatures } from "../../constants"
+import { NavFeatures , NavLinks } from "../../constants"
 import { useState } from "react";
 
 import { useAuthStore } from "../../zustand/store";
 import { motion } from "framer-motion";
 
+
+
+
+
+
 export const Navbar = () => {
   const [menu, setMenu] = useState("home");
-    const [toogle, setToogle] = useState(false)     
+  const [toogle, setToogle] = useState(false)     
   const { isAuthenticated, user,logout } = useAuthStore();
 
   const handleLogout = () => {
@@ -37,7 +44,7 @@ export const Navbar = () => {
             <div className=" w-[370px] gap-[40px] flex items-center  text-[#49557e] ">
             
                 {NavFeatures.map((item,index) => (
-                <Link   key={index} to={"/"}>
+                <Link   key={index} to={`/${NavLinks[index]}`} >
                         <div className={`    transition-transform ${ menu == item ? "underline":""}  text-xl text-[#49557e] `} 
                             onClick={() => setMenu(item)}
                         >

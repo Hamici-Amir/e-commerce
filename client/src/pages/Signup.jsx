@@ -1,3 +1,4 @@
+import React from 'react'; 
 import { SignUp } from "../components/auth"
 import { assets } from "../assets/frontend_assets/assets";
 import { Link } from "react-router-dom";

@@ -3,7 +3,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import  ErrorRoute  from "./ErrorRoute";
 import  EmailVerification  from "./EmailVerification";
-import Dashboard from "./Dashborad";
+import { Contacts } from "../components/Navbar";
 
 export  {
     Home,
@@ -11,5 +11,6 @@ export  {
     Signup,
     ErrorRoute,
     EmailVerification,
-    Dashboard
+    Contacts
+   
 }
