@@ -80,7 +80,7 @@ export const Sidebar = () => {
                      <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[95%] mx-auto p-2 shadow">
                     <li>    
                     <Link to={"/dashboard?tab=profile"} className="w-full hover:bg-orange-600 hover:text-white font-bold">  {icons[icons.length-3]}
-                    <p className="font-semibold"> Home page </p>      </Link>
+                    <p className="font-semibold"> profile </p>      </Link>
                      </li>
                      <li>   <Link to={"/"} className="w-full hover:bg-orange-600 hover:text-white font-bold">  {icons[icons.length-2]}
                      <p className="font-semibold"> Home page </p>      </Link></li> 
