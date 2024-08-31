@@ -3,14 +3,14 @@ import {Link} from 'react-router-dom'
 import { MdSpaceDashboard } from "react-icons/md";
 import { FaHome ,FaShoppingCart } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
-import { IoCalendarClear } from "react-icons/io5";
+import { ShoppingBag } from "lucide-react";
 import { RiSendPlaneFill,RiArrowRightSLine } from "react-icons/ri";
 import { CgProfile,CgLogOut } from "react-icons/cg";
 import { useAuthStore } from "../../zustand/store";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const icons = [<MdSpaceDashboard size={23}  />,<LuListTodo size={23} />,<RiSendPlaneFill size={23} />,<FaShoppingCart size={23} />,<CgProfile size={23} />,<FaHome size={23} />,<CgLogOut size={23} />,]
+const icons = [<MdSpaceDashboard size={23}  />,<LuListTodo size={23} />,<RiSendPlaneFill size={23} />,<ShoppingBag size={23} />,<CgProfile size={23} />,<FaHome size={23} />,<CgLogOut size={23} />,]
 
 
 

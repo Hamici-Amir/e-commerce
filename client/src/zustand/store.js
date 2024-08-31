@@ -19,6 +19,9 @@ export const useAuthStore = create((set) => ({
 		set({ isLoading: true, error: null });
 		try {
 			const response = await axios.post(`${API_URL}/sign-up`, { email, password, name });
+			
+				// save the user to local storage
+			localStorage.setItem('e-commerce-user',JSON.stringify(response.data.user))			
 			set({ user: response.data.user, isAuthenticated: true, isLoading: false });
 		} catch (error) {
 			set({ error: error.response.data.message || "Error signing up", isLoading: false });
@@ -29,6 +32,9 @@ export const useAuthStore = create((set) => ({
 		set({ isLoading: true, error: null });
 		try {
 			const response = await axios.post(`${API_URL}/login`, { email, password });
+			
+				// save the user to local storage
+				localStorage.setItem('e-commerce-user',JSON.stringify(response.data.user))
 			set({
 				isAuthenticated: true,
 				user: response.data.user,
@@ -45,6 +51,7 @@ export const useAuthStore = create((set) => ({
 		set({ isLoading: true, error: null });
 		try {
 			await axios.post(`${API_URL}/logout`);
+			localStorage.removeItem('e-commerce-user')
 			set({ user: null, isAuthenticated: false, error: null, isLoading: false });
 		} catch (error) {
 			set({ error: "Error logging out", isLoading: false });
@@ -65,8 +72,9 @@ export const useAuthStore = create((set) => ({
 	checkAuth: async () => {
 		set({ isCheckingAuth: true, error: null });
 		try {
-			const response = await axios.get(`${API_URL}/check-auth`);
-			set({ user: response.data.user, isAuthenticated: true, isCheckingAuth: false });
+			//const response = await axios.get(`${API_URL}/check-auth`);
+			const response = await JSON.parse(localStorage.getItem('e-commerce-user'))
+			set({ user: response, isAuthenticated: true, isCheckingAuth: false });
 		} catch (error) {
 			set({ error: null, isCheckingAuth: false, isAuthenticated: false });
 		}
