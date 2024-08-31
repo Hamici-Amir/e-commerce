@@ -1,5 +1,5 @@
 import { SideFeatures ,SideLinks } from "../../constants"
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
 import { MdSpaceDashboard } from "react-icons/md";
 import { FaHome ,FaShoppingCart } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
@@ -8,7 +8,8 @@ import { RiSendPlaneFill,RiArrowRightSLine } from "react-icons/ri";
 import { CgProfile,CgLogOut } from "react-icons/cg";
 import { useAuthStore } from "../../zustand/store";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+
 
 const icons = [<MdSpaceDashboard size={23}  />,<LuListTodo size={23} />,<RiSendPlaneFill size={23} />,<ShoppingBag size={23} />,<CgProfile size={23} />,<FaHome size={23} />,<CgLogOut size={23} />,]
 
@@ -18,6 +19,21 @@ export const Sidebar = () => {
     const [toogle,setToogle] = useState(false)
     const {user} = useAuthStore()
     
+    const location = useLocation()
+  
+  const [tab ,setTab] =useState("/") 
+  useEffect(()=> {
+      const urlParams =new URLSearchParams(location.search)
+      const tabFromUrl = urlParams.get('tab')
+      if(tabFromUrl){
+        setTab(tabFromUrl) ;
+      }
+     
+
+  },[location.search])
+
+
+
     return (
    
     <div 
@@ -37,7 +53,7 @@ export const Sidebar = () => {
                         <Link to={`/dashboard?tab=${SideLinks[index]}`} 
                             className="w-[95%] mx-auto"
                         key={index} >
-                        <div className={`flex gap-[15px]  items-center py-[15px] px-[25px]  rounded-lg hover:bg-orange-600   hover:text-white ${location.pathname.endsWith("/home") ? " bg-[#5852D8] text-white":"bg-white text-black"}  font-poppins  `}>
+                        <div className={`flex gap-[15px]  items-center py-[15px] px-[25px]  rounded-lg hover:bg-orange-600   hover:text-white ${tab == SideLinks[index] || index==0 && tab == '/' ? " bg-orange-600 text-white":"bg-white text-black"}  font-poppins  `}>
                             {icons[index]}
                       <p className="font-semibold"> {item} </p>
                      </div>  
@@ -53,7 +69,7 @@ export const Sidebar = () => {
             <div className="dropdown dropdown-top"> 
             <div tabIndex={0} role="button"
                 onClick={() => setToogle(!toogle)}
-            className={`flex gap-[15px] w-[95%] mx-auto cursor-pointer items-center    rounded-lg    hover:text-white ${location.pathname.endsWith("/home") ? " bg-[#5852D8] text-white":"bg-white text-black"}  font-poppins  `}>
+            className={`flex gap-[15px] w-[95%] mx-auto cursor-pointer items-center    rounded-lg    hover:text-white ${tab == "profile" ? " bg-orange-600 text-white":"bg-white text-black"}  font-poppins  `}>
             <div className={`flex gap-[25px]  h-[80px] items-center  font-extrabold    "bg-white text-black  `}>
         <div className="w-[50px] h-[50px] rounded-full  "> { user.profilePic &&  <img src={user.profilePic}  alt=""   /> } </div>
         <div className="flex items-center gap-[5px] flex-grow">
@@ -78,7 +94,7 @@ export const Sidebar = () => {
                 >    
                      <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[95%] mx-auto p-2 shadow">
                     <li>    
-                    <Link to={"/dashboard?tab=profile"} className="w-full hover:bg-orange-600 hover:text-white font-bold">  {icons[icons.length-3]}
+                    <Link to={"/dashboard?tab=profile"} className="w-full  hover:bg-orange-600 hover:text-white font-bold">  {icons[icons.length-3]}
                     <p className="font-semibold"> profile </p>      </Link>
                      </li>
                      <li>   <Link to={"/"} className="w-full hover:bg-orange-600 hover:text-white font-bold">  {icons[icons.length-2]}
