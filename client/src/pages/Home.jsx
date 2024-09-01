@@ -18,6 +18,7 @@ const Home = () => {
       View Menu
     </button>
       </div>
+      
     </div>
   )
 }

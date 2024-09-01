@@ -6,7 +6,7 @@ import {useAuthStore} from "./zustand/store"
 import LoadingSpinner from "./components/Loading/LoadingSpinner"
 import { Toaster } from "react-hot-toast";
 import { useEffect } from "react"
-
+import ExploreMenu from './components/ExploreMenu/ExploreMenu';
 
 function App() {
   const { isCheckingAuth, checkAuth } = useAuthStore();
@@ -25,6 +25,7 @@ function App() {
             <>
                 <Navbar />
                 <Home />
+                <ExploreMenu/>
                 <Footer />
             </>
             }/>
