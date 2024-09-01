@@ -88,7 +88,7 @@ export const Navbar = () => {
                   <br />
                   <hr />  
                 <li>   <Link to={"/dashboard"} className="w-full"> Dashborad      </Link></li> 
-                <li>   <Link to={"/dashboard"} className="w-full"> profile      </Link></li> 
+                <li>   <Link to={"/dashboard?tab=profile"} className="w-full"> profile      </Link></li> 
                 <br />
                 <hr />
               <li> <div onClick={handleLogout} >Log out</div>    </li>

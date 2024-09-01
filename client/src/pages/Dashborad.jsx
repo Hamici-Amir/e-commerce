@@ -1,6 +1,22 @@
-import { Sidebar } from '../components/dashboard/Sidebar'
-
+import { Dash, List, Products, Profile, Request, Sidebar } from '../components/dashboard'
+import { useLocation } from 'react-router-dom'
+import { useState,useEffect } from 'react'
 const Dashboard = () => {
+  const location = useLocation()
+  
+  const [tab ,setTab] =useState("/") 
+  useEffect(()=> {
+      const urlParams =new URLSearchParams(location.search)
+      const tabFromUrl = urlParams.get('tab')
+      if(tabFromUrl){
+        setTab(tabFromUrl) ;
+      }
+     
+
+  },[location.search])
+
+
+
   return (
     <div className=' flex    '>
         <Sidebar />
@@ -8,8 +24,12 @@ const Dashboard = () => {
     <div className=' w-[700px]  '>
     
     
-    
-    
+      {tab == '/' || tab=="dash" && <Dash />   }
+      {tab == 'orders' && <List /> }
+      {tab == 'requests' && <Request /> }
+      {tab == 'products' && <Products /> }
+      {tab == 'profile'  && <Profile /> }
+
     
     
     
