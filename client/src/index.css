@@ -17,4 +17,10 @@ input::placeholder {
    font-size: large;
  }
 
+/* Hide scrollbar for all browsers */
 
+ 
+ .hide-scrollbar::-webkit-scrollbar {
+   display: none; /* Safari and Chrome */
+ }
+ 

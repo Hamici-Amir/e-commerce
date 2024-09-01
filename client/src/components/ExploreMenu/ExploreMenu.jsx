@@ -1,0 +1,35 @@
+import React from 'react'
+
+import { menu_list } from '../../assets/frontend_assets/assets'
+
+
+
+
+const ExploreMenu = () => {
+  return (
+    <div className='h-[590px] mt-10 
+          w-[80%] flex flex-col gap-4 mx-auto  '>
+        <h1 className='text-3xl font-semibold font-medium '>Explore our menu </h1>
+        <p className='max-w-2xl '>Choose from diverse menu  featuring  a delectable array of dishes .
+             Our mission is to satisfy your cravings and elevate your dining experience , one delicious meal at a time .   </p>
+
+        <div className='flex justify-between items-center gap-8 ml-5 max-w-full overflow-x-auto hide-scrollbar '>
+            {menu_list.map((item,index) => {
+                return(
+                    <div key={index} className='hide-scrollbar'>
+                         <img src={item.menu_image} alt="" 
+                         className= 'w-80 min-w-20 rounded duration-75 ' />   
+                         <p className='mt-3 text-custom-gray text-xl cursor-pointer'>{item.menu_name}</p>
+
+                    </div>    
+                 
+                )
+                
+            })}
+        </div>
+    <hr className='ml-3 h-1 bg-white border-none ' />       
+    </div>
+  )
+}
+
+export default ExploreMenu
