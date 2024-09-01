@@ -5,6 +5,7 @@ import  ErrorRoute  from "./ErrorRoute";
 import  EmailVerification  from "./EmailVerification";
 import { Contacts } from "../components/Navbar";
 import Dashboard from "./Dashborad";
+import Profile from "./Profile";
 
 export  {
     Home,
@@ -13,6 +14,7 @@ export  {
     ErrorRoute,
     EmailVerification,
     Contacts,
-    Dashboard
+    Dashboard,
+    Profile
    
 }
