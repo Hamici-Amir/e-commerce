@@ -7,14 +7,7 @@ const Dashboard = () => {
 
     <div className=' w-[700px]  '>
     
-    
-    
-    
-    
-    
-    
-    
-    
+  
     
     <div className="drawer sm:hidden inline-block">
   <input id="my-drawer" type="checkbox" className="drawer-toggle "  />
