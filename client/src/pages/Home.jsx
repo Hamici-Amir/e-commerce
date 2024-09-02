@@ -33,7 +33,7 @@ const Home = () => {
     </div>
     <ExploreMenu category={category} setCategory={setCategory }/>
       <hr className='py-10 w-[80%] mx-auto ' />
-    <FoodDisplay />
+    <FoodDisplay category={category} />
     
     </>
   )

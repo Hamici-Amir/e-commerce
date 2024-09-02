@@ -2,7 +2,7 @@ import { FoodStore } from "../../zustand/store"
 
 var Rating = Math.floor(3.55)
 
-export const FoodDisplay = () => {
+export const FoodDisplay = ({category}) => {
     const {FoodList} = FoodStore();
   
     return (
@@ -13,7 +13,7 @@ export const FoodDisplay = () => {
             </h1> 
                 <div className="gap-16 cursor-pointer col-span-4 mx-auto justify-between  grid grid-cols-4 grid-flow-row-dense   ">
                 {
-                    FoodList.map((item) => (
+                    FoodList.filter((item) => (item.category === category || category === "All")  ).map((item) => (
 
 
 <div className="   card  w-[350px]  shadow-xl">
