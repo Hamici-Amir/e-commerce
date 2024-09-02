@@ -21,9 +21,12 @@ const ExploreMenu = ({category,setCategory}) => {
                     key={index} 
                     className='hide-scrollbar'
                     >
-                         <img src={item.menu_image} alt="" 
-                         className= 'w-80 min-w-20 rounded duration-75 ' />   
-                         <p className='mt-3 text-custom-gray text-xl cursor-pointer'>{item.menu_name}</p>
+                         <img 
+                         className={category===item.menu_name? "active": "" }
+                         src ={item.menu_image} 
+                         alt ="" 
+                         className = 'w-80 min-w-20 rounded duration-75 ' />   
+                         <p className = 'mt-3 text-custom-gray text-xl cursor-pointer'>{item.menu_name}</p>
 
                     </div>    
                  
