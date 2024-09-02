@@ -5,7 +5,8 @@ import { menu_list } from '../../assets/frontend_assets/assets'
 
 
 
-const ExploreMenu = () => {
+const ExploreMenu = ({category,setCategory}) => {
+    console.log(category)
   return (
     <div className='h-[590px] mt-10 
           w-[80%] flex flex-col gap-4 mx-auto  '>
@@ -16,7 +17,11 @@ const ExploreMenu = () => {
         <div className='flex justify-between items-center gap-8 ml-5 max-w-full overflow-x-auto hide-scrollbar '>
             {menu_list.map((item,index) => {
                 return(
-                    <div key={index} className='hide-scrollbar'>
+                    <div 
+                    onClick={()=>setCategory(prev=>prev===item.menu_name?"All":item.menu_name)}
+                    key={index} 
+                    className='hide-scrollbar cursor-pointer'
+                    >
                          <img src={item.menu_image} alt="" 
                          className= 'w-80 min-w-20 rounded duration-75 ' />   
                          <p className='mt-3 text-custom-gray text-xl cursor-pointer'>{item.menu_name}</p>
