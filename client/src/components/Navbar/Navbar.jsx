@@ -1,5 +1,5 @@
 
-import React from 'react'; 
+import React, { useEffect } from 'react'; 
 import { Link } from "react-router-dom"
 import { NavFeatures , NavLinks } from "../../constants"
 import { useState } from "react";
@@ -20,6 +20,8 @@ export const Navbar = () => {
   const handleLogout = () => {
         logout();
   }
+
+
 
     return (
     <nav className="  h-20 w-full sm:px-[100px]   top-0  border-b border-black px-[30px] flex justify-between items-center "
@@ -73,6 +75,7 @@ export const Navbar = () => {
                   
   <img src={user.profilePic} className=" cursor-pointer " 
     onClick={() => setToogle(!toogle)}
+              
   width={50} alt="" />
             {toogle &&  <motion.div
 				initial={{ opacity: 0, y: 0 }}
