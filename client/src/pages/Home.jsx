@@ -1,6 +1,15 @@
 import React from 'react'; 
+import { useState } from 'react';
 
 const Home = () => {
+
+      const [category,setCategory] = useState("All") ;
+
+
+
+
+
+
   return (
     <div className="h-[590px] mt-10 bg-cover 
           w-[80%] flex flex-col gap-4 mx-auto rounded-[20px] Bg">

@@ -8,10 +8,12 @@ import { Toaster } from "react-hot-toast";
 import { useEffect } from "react"
 import {Contacts} from "./components/Navbar" ;
 import ExploreMenu from './components/ExploreMenu/ExploreMenu';
+import { useState } from 'react';
+
 
 function App() {
   const { isCheckingAuth, checkAuth } = useAuthStore();
-
+  const [category,setCategory] = useState("All") ;
 	useEffect(() => {
 		checkAuth();
 	}, [checkAuth]);
@@ -20,13 +22,14 @@ function App() {
   */
 
   return (
+
     <>
       <Routes>
           <Route path="/" exact element={
             <>
                 <Navbar />
                 <Home />
-                <ExploreMenu/>
+                <ExploreMenu category={category} setCategory={setCategory }/>
                 <Footer />
             </>
             }/>
