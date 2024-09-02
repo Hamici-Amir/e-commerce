@@ -5,10 +5,10 @@ import { menu_list } from '../../assets/frontend_assets/assets'
 
 
 
-const ExploreMenu = ({category,setCategory}) => {
+export const ExploreMenu = ({category,setCategory}) => {
     console.log(category)
   return (
-    <div className='h-[590px] mt-10 
+    <div className='h-[400px] mt-10 
           w-[80%] flex flex-col gap-4 mx-auto  '>
         <h1 className='text-3xl font-semibold  '>Explore our menu </h1>
         <p className='max-w-2xl '>Choose from diverse menu  featuring  a delectable array of dishes .
@@ -23,7 +23,7 @@ const ExploreMenu = ({category,setCategory}) => {
                     className='hide-scrollbar cursor-pointer'
                     >
                          <img src={item.menu_image} alt="" 
-                         className= 'w-80 min-w-20 rounded duration-75 ' />   
+                         className= {`w-80 min-w-20 rounded-full duration-75 ${category === item.menu_name? "border-[5px] border-tomato p-1":''} `} />   
                          <p className='mt-3 text-custom-gray text-xl cursor-pointer'>{item.menu_name}</p>
 
                     </div>    
@@ -37,4 +37,4 @@ const ExploreMenu = ({category,setCategory}) => {
   )
 }
 
-export default ExploreMenu
+

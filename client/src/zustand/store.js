@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { food_list } from "../assets/frontend_assets/assets";
 
 //const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
 const API_URL =  "http://localhost:5000/api/auth";
@@ -111,3 +112,12 @@ forgotPassword: async (email) => {
 	},
 */
 }));
+
+export const FoodStore = create((set) => ({
+
+	FoodList : food_list,
+	
+
+
+
+}))
