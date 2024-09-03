@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 
 
 // Data base 
-import { connectDB } from "./db/connectDB.js";
+import { connectDB } from "./lib/connectDB.js";
 
 // Routes
 import AuthRouter from "./routes/Auth.route.js";
