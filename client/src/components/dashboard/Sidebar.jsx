@@ -46,7 +46,7 @@ export const Sidebar = () => {
                     Tomato. 
                     
             </div>
-            <div className="mt-16 gap-1 flex flex-col" key={"xxxx"}>
+            <section className="mt-16 gap-1 flex flex-col">
                 
             {SideFeatures.map((item,index) => (
                 <>
@@ -63,7 +63,7 @@ export const Sidebar = () => {
 
             ))}
         
-        </div>  
+        </section>  
             </div>
             
             <div className="dropdown dropdown-top"> 

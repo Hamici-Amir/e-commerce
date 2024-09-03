@@ -6,7 +6,6 @@ import { menu_list } from '../../assets/frontend_assets/assets'
 
 
 export const ExploreMenu = ({category,setCategory}) => {
-    console.log(category)
   return (
     <div className='h-[400px] mt-10 
           w-[80%] flex flex-col gap-4 mx-auto  '>

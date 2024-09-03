@@ -11,14 +11,7 @@ export const createPost  = async (req,res) => {
 		if (image) {
 			cloudinaryResponse = await cloudinary.uploader.upload(image, { folder: "products" });
         }
-        const user = await User.findById(req.userId);
-        if (! user) {
-            return res.status(400).json({ success: false, message: " User not founded " })
-        }
-        if (! user.isAdmin){
-            return res.status(500).json({ success: false, message: " you are not Admin " })
-        }
-
+     
         const post = new Post({
             name,
             price,
