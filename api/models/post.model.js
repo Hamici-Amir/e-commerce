@@ -22,8 +22,15 @@ const postSchema = new mongoose.Schema(
             type:String,
             enum:["Salad","Rolls","Deserts","Sandwich","Cake","Pure Veg","Pasta","Noodles"],
             default:"Sandwich"
+        },
+        rating:{
+            type:Number,
+            default:0
+        },
+        ratingNumber:{
+            type:Number,
+            default:0
         }
-
 
 
 
