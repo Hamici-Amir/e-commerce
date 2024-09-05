@@ -25,7 +25,7 @@ const Dashboard = () => {
         <Sidebar />
         </div>
 
-    <div className=' w-[700px]  '>
+    <div className=' w-full  '>
     
     
       {tab == '/' || tab=="dash" && <Dash />   }
