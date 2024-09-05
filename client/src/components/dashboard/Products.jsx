@@ -1,7 +1,10 @@
-import { motion } from "framer-motion";
-import {Package} from "lucide-react"
+import {ListFilter , Settings , Plus , List , LayoutGrid} from "lucide-react"
+import { useState } from "react";
  
 export const Products = () => {
+  
+  const [menu,setMenu] = useState("All")
+  const [cards,setCards] = useState(1)
 
   const handleImageChange = (e) => {
 		const file = e.target.files[0];
@@ -19,60 +22,78 @@ export const Products = () => {
 	};
 
   return (
-    <main className='w-full mx-auto py-6  px-4 lg:px-8'>
-    <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+    <main className='w-full mx-auto '>
+			<div className=" flex px-1  gap-32 items-center w-full h-[68px]  border-b-2 ">
+					<h1 className="text-xl  font-bold  pl-2 "> Total Products : {"40"}  products </h1>
+					<label className="input input-bordered p-2 w-[530px] flex items-center gap-2">
+  <input type="text" className="grow" placeholder="Search" />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    fill="currentColor"
+    className="h-8 w-8 opacity-70">
+    <path
+      fillRule="evenodd"
+      d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+      clipRule="evenodd" />
+  </svg>
+</label>
+								<div className=" flex gap-4">
+						<button className="btn btn-primary btn-outline text-xl  "> <ListFilter size={25} strokeWidth={2.5} /> Filter  </button>		
+            <button className="btn  btn-outline text-xl  "> <Settings  size={23} strokeWidth={2.5} /> Modify  </button>		
 
-      
-<motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md overflow-hidden shadow-lg rounded-xl border border-gray-700'
-			whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
-		>
-			<div className='px-4 py-5 sm:p-6'>
-				<span className='flex items-center text-sm font-medium text-gray-400'>
-					<Package   size={20} className='mr-2' color="#3700ff"  />
-					{"ffff"}
-				</span>
-				<p className='mt-1 text-3xl font-semibold text-gray-100'>12</p>
-			</div>
-		</motion.div>
-    <motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md overflow-hidden shadow-lg rounded-xl border border-gray-700'
-			whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
-		>
-			<div className='px-4 py-5 sm:p-6'>
-				<span className='flex items-center text-sm font-medium text-gray-400'>
-					<Package   size={20} className='mr-2' color="#3700ff"  />
-					{"ffff"}
-				</span>
-				<p className='mt-1 text-3xl font-semibold text-gray-100'>12</p>
-			</div>
-		</motion.div>
-    <motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md overflow-hidden shadow-lg rounded-xl border border-gray-700'
-			whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
-		>
-			<div className='px-4 py-5 sm:p-6'>
-				<span className='flex items-center text-sm font-medium text-gray-400'>
-					<Package   size={20} className='mr-2' color="#3700ff"  />
-					{"ffff"}
-				</span>
-				<p className='mt-1 text-3xl font-semibold text-gray-100'>12</p>
-			</div>
-		</motion.div><motion.div
-			className='bg-gray-800 bg-opacity-50 backdrop-blur-md overflow-hidden shadow-lg rounded-xl border border-gray-700'
-			whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
-		>
-			<div className='px-4 py-5 sm:p-6'>
-				<span className='flex items-center text-sm font-medium text-gray-400'>
-					<Package   size={20} className='mr-2' color="#3700ff"  />
-					{"ffff"}
-				</span>
-				<p className='mt-1 text-3xl font-semibold text-gray-100'>12</p>
-			</div>
-		</motion.div>
+					</div>
 
+			</div>
+
+      <section className="px-[100px] mt-10 flex flex-col gap-10 ">
+        <div className="flex justify-between items-center">
+            <h1 className="text-2xl font-bold btn bg-white"> Products </h1>
+            <button className="btn bg-blue-600 text-xl font-bold text-white hover:bg-blue-600 "
+              onClick={()=>document.getElementById('my_modal_1').showModal()}
+            >  <Plus size={23} /> New products  </button>
+            <dialog id="my_modal_1" className="modal">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Hello!</h3>
+    <p className="py-4">Press ESC key or click the button below to close</p>
+    <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button className="btn">Close</button>
+      </form>
     </div>
-    </main>
+  </div>
+          </dialog>
+        </div>
+        <div className="flex justify-between items-center">
+          <div className="flex gap-4  ">
+           
+            {
+              ["All","Published","Draft"].map((item) => 
+                <button className={`btn ${item == menu && "btn-neutral"} `}
+                  onClick={() => setMenu(item) }
+                >  {item}  </button>
+            )
+
+            }
+          </div>
+          <div className="flex gap-4">
+          <button className={`btn ${cards === 1 && "btn-neutral"}  `}
+           onClick={() => setCards(1) } ><List   /></button> 
+          <button className={`btn ${cards === 2 && "btn-neutral"}  `}
+          onClick={() => setCards(2) }
+          ><LayoutGrid /></button> 
+
+          
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+    </main>	
   )
 }
 
@@ -83,3 +104,8 @@ export const Products = () => {
         onChange={handleImageChange}
       />
 */
+
+
+
+/*
+ */

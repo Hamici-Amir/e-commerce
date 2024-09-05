@@ -101,10 +101,10 @@ export const Profile = () => {
                 />
                 </div>
               <div>
-              <span className="text-orange-600 max-w-lg mx-auto w-full font-extrabold"> your password  </span> 
+              <span className="text-orange-600 max-w-lg mx-auto w-full font-extrabold"> your email  </span> 
 
-               <input type="password" placeholder="your name" className="  mx-auto  input input-bordered w-full max-w-lg  "
-                value={"**********"}
+               <input type="text" disabled placeholder="your name" className=" font-bold mx-auto  input input-bordered w-full max-w-lg  "
+                value={user.email}
               />
               </div>
 
