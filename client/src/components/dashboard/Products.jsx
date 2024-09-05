@@ -1,5 +1,7 @@
 import {ListFilter , Settings , Plus , List , LayoutGrid} from "lucide-react"
 import { useState } from "react";
+import { Cards } from "./Products/Cards";
+import { Table } from "./Products/Table";
  
 export const Products = () => {
   
@@ -22,7 +24,7 @@ export const Products = () => {
 	};
 
   return (
-    <main className='w-full mx-auto '>
+    <main className='w-full mx-auto  overflow-auto h-screen  '>
 			<div className=" flex px-1  gap-32 items-center w-full h-[68px]  border-b-2 ">
 					<h1 className="text-xl  font-bold  pl-2 "> Total Products : {"40"}  products </h1>
 					<label className="input input-bordered p-2 w-[530px] flex items-center gap-2">
@@ -40,32 +42,33 @@ export const Products = () => {
 </label>
 								<div className=" flex gap-4">
 						<button className="btn btn-primary btn-outline text-xl  "> <ListFilter size={25} strokeWidth={2.5} /> Filter  </button>		
-            <button className="btn  btn-outline text-xl  "> <Settings  size={23} strokeWidth={2.5} /> Modify  </button>		
+            <button className="btn  btn-outline text-xl   "> <Settings  size={23} strokeWidth={2.5} /> Modify  </button>		
 
 					</div>
 
 			</div>
 
-      <section className="px-[100px] mt-10 flex flex-col gap-10 ">
+      <section className="px-[100px] mt-10  flex flex-col gap-10  ">
         <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold btn bg-white"> Products </h1>
             <button className="btn bg-blue-600 text-xl font-bold text-white hover:bg-blue-600 "
               onClick={()=>document.getElementById('my_modal_1').showModal()}
             >  <Plus size={23} /> New products  </button>
-            <dialog id="my_modal_1" className="modal">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Hello!</h3>
-    <p className="py-4">Press ESC key or click the button below to close</p>
-    <div className="modal-action">
-      <form method="dialog">
+            <dialog id="my_modal_1" className=" w-[60%] h-[400px] rounded-xl ">
+       <div className=" ">
+
+
+
+         <div className="">
+             <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
-      </form>
+              <button className="btn btn-neutral   bottom-1 z-10 absolute right-1     ">Close</button>
+            </form>
     </div>
   </div>
           </dialog>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center h-20 bg-gray-50">
           <div className="flex gap-4  ">
            
             {
@@ -86,11 +89,15 @@ export const Products = () => {
 
           
           </div>
-
+              
         </div>
 
-      </section>
+               
 
+              {cards === 2 ? <Cards /> : <Table />}            
+
+              
+      </section>
 
 
     </main>	

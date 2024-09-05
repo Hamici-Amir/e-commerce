@@ -20,12 +20,12 @@ const Dashboard = () => {
 
 
   return (
-    <div className=' flex     '>
+    <div className=' flex    '>
         <div className=' hidden sm:inline-block'>
         <Sidebar />
         </div>
 
-    <div className=' w-full  '>
+    <div className=' w-full   '>
     
     
       {tab == '/' || tab=="dash" && <Dash />   }
