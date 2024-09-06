@@ -8,7 +8,7 @@ export const Products = () => {
   const [menu,setMenu] = useState("All")
   const [cards,setCards] = useState(1)
 
-  const handleImageChange = (e) => {
+/*  const handleImageChange = (e) => {
 		const file = e.target.files[0];
 		if (file) {
 			const reader = new FileReader();
@@ -22,10 +22,13 @@ export const Products = () => {
 		}
 
 	};
-
+ */ 
+  
+  
   return (
     <main className='w-full mx-auto  overflow-auto h-screen  '>
-			<div className=" flex px-1  gap-32 items-center w-full h-[68px]  border-b-2 ">
+			
+      <div className=" flex px-1  gap-32 items-center w-full h-[68px]  border-b-2 ">
 					<h1 className="text-xl  font-bold  pl-2 "> Total Products : {"40"}  products </h1>
 					<label className="input input-bordered p-2 w-[530px] flex items-center gap-2">
   <input type="text" className="grow" placeholder="Search" />
@@ -68,6 +71,7 @@ export const Products = () => {
   </div>
           </dialog>
         </div>
+
         <div className="flex justify-between items-center h-20 bg-gray-50">
           <div className="flex gap-4  ">
            
@@ -82,7 +86,7 @@ export const Products = () => {
           </div>
           <div className="flex gap-4">
           <button className={`btn ${cards === 1 && "btn-neutral"}  `}
-           onClick={() => setCards(1) } ><List   /></button> 
+           onClick={() => setCards(1) } > <List /> </button> 
           <button className={`btn ${cards === 2 && "btn-neutral"}  `}
           onClick={() => setCards(2) }
           ><LayoutGrid /></button> 

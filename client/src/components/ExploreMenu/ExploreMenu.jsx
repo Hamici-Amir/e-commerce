@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 import { menu_list } from '../../assets/frontend_assets/assets'
@@ -23,7 +24,7 @@ export const ExploreMenu = ({category,setCategory}) => {
                     >
                          <img src={item.menu_image} alt="" 
                          className= {`w-80 min-w-20 rounded-full duration-75 ${category === item.menu_name? "border-[5px] border-tomato p-1":''} `} />   
-                         <p className='mt-3 text-custom-gray text-xl cursor-pointer'>{item.menu_name}</p>
+                         <p className='mt-3 text-custom-gray ml-8 text-xl cursor-pointer'>{item.menu_name}</p>
 
                     </div>    
                  
@@ -35,5 +36,3 @@ export const ExploreMenu = ({category,setCategory}) => {
     </div>
   )
 }
-
-
