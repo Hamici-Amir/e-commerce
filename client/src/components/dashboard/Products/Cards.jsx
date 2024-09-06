@@ -8,13 +8,13 @@ export const Cards = ({data}) => {
    const {FoodList} = FoodStore() ;
 
   return (
-    <div className="grid  grid-cols-3  gap-4   ">
-        {FoodList.map((img,item) =>  <div className="rounded-lg card bg-base-100 w-96 shadow-xl">
-  <figure>
+    <div className="grid  grid-cols-3  gap-4  bg-gray-50  rounded-lg  ">
+        {FoodList.map((food,item) =>  <div className="rounded-lg cursor-pointer hover:w-[400px]   hover:transition-all hover:duration-500  card bg-base-100 w-96 shadow-xl">
+  
     <img 
-      src={img.image}
+      src={food.image}
       alt="Shoes" />
-  </figure>
+  
   <div className="card-body">
     <h2 className="card-title ">
       {item %3 === 2 ?  <div className="badge bg-green-300"><Dot /> Available </div> : <div className="badge bg-red-300"> <Dot />Not available </div>}
@@ -26,7 +26,7 @@ export const Cards = ({data}) => {
          <div className="flex gap-10 items-center ">
          
          <p className="flex text-xl items-center">
-         49.00 دج 
+         {food.price} دج 
           
           </p>
 
