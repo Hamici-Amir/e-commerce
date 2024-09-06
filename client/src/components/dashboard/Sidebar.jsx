@@ -69,7 +69,7 @@ export const Sidebar = () => {
             <div className="dropdown dropdown-top"> 
             <div tabIndex={0} role="button"
                 onClick={() => setToogle(!toogle)}
-            className={`flex gap-[15px] w-[95%] mx-auto cursor-pointer items-center    rounded-lg    hover:text-white ${tab == "profile" ? " bg-orange-600 text-white":"bg-white text-black"}  font-poppins  `}>
+            className={`flex gap-[15px] w-[95%] mx-auto cursor-pointer items-center    rounded-lg    hover:text-white  font-poppins  `}>
             <div className={`flex gap-[25px]  h-[80px] items-center  font-extrabold    "bg-white text-black  `}>
         <div className="w-[50px] h-[50px] rounded-full ml-3   "> { user.profilePic &&  <img src={user.profilePic}  alt=""   /> } </div>
         <div className="lg:flex items-center gap-[5px]  hidden  flex-grow">
@@ -92,10 +92,12 @@ export const Sidebar = () => {
 				transition={{ duration: 0.5 }}
                     
                 >    
-                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[95%] mx-auto p-2 shadow">
+                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] gap-1 w-[95%] mx-auto p-2 shadow">
                     <li>    
-                    <Link to={"/dashboard?tab=profile"} className="w-full  hover:bg-orange-600 hover:text-white font-bold">  {icons[icons.length-3]}
-                    <p className="font-semibold  hidden lg:inline-block"> profile </p>      </Link>
+                    <Link to={"/dashboard?tab=profile"} className={`w-full  hover:bg-orange-600 hover:text-white font-bold
+                        ${tab == "profile" ? " bg-orange-600 text-white":"bg-white text-black"} 
+                      `}>  {icons[icons.length-3]}
+                    <p className="font-semibold  hidden lg:inline-block "> profile </p>      </Link>
                      </li>
                      <li>   <Link to={"/"} className="w-full hover:bg-orange-600 hover:text-white font-bold">  {icons[icons.length-2]}
                      <p className="font-semibold  hidden lg:inline-block"> Home page </p>      </Link></li> 
