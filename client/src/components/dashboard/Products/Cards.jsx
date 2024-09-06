@@ -6,7 +6,7 @@ export const Cards = ({data}) => {
         {[1,2,3,4,5,6,7,8,9].map(() =>  <div className="card bg-base-100 w-96 shadow-xl">
   <figure>
     <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      src="https://res.cloudinary.com/dbctizaae/image/upload/v1725395214/products/ah8iwhpfzwf2krpfldeo.png"
       alt="Shoes" />
   </figure>
   <div className="card-body">
