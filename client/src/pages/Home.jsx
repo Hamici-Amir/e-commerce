@@ -1,9 +1,9 @@
+import React from 'react'; 
 import { useState } from 'react';
-import { ExploreMenu, FoodDisplay } from '../components/ExploreMenu';
 
 const Home = () => {
 
-      const [category,setCategory] = useState("All") ;
+     
 
 
 
@@ -11,8 +11,6 @@ const Home = () => {
 
 
   return (
-    <>
-   
     <div className="h-[590px] mt-10 bg-cover 
           w-[80%] flex flex-col gap-4 mx-auto rounded-[20px] Bg">
               
@@ -29,13 +27,7 @@ const Home = () => {
       View Menu
     </button>
       </div>
-      
     </div>
-    <ExploreMenu category={category} setCategory={setCategory }/>
-      <hr className='py-10 w-[80%] mx-auto ' />
-    <FoodDisplay category={category} />
-    
-    </>
   )
 }
 
