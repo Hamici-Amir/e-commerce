@@ -8,7 +8,7 @@ export const Cards = ({data}) => {
    const {FoodList} = FoodStore() ;
 
   return (
-    <div className="grid  grid-cols-3  gap-4  bg-gray-50  rounded-lg  ">
+    <div className="grid  md:grid-cols-2 grid-cols-1 lg:grid-cols-3  gap-4  bg-gray-50  rounded-lg  ">
         {FoodList.map((food,item) =>  <div className="rounded-lg cursor-pointer hover:w-[400px]   hover:transition-all hover:duration-500  card bg-base-100 w-96 shadow-xl">
   
     <img 

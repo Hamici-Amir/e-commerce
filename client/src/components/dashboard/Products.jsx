@@ -1,7 +1,8 @@
-import {ListFilter , Settings , Plus , List , LayoutGrid} from "lucide-react"
+import {ListFilter , Settings , Plus , List , LayoutGrid, X} from "lucide-react"
 import { useState } from "react";
 import { Cards } from "./Products/Cards";
 import { Table } from "./Products/Table";
+import CreateProductForm from "./Products/CreateProductForm";
  
 export const Products = () => {
   
@@ -57,17 +58,16 @@ export const Products = () => {
             <button className="btn bg-blue-600 text-xl font-bold text-white hover:bg-blue-600 "
               onClick={()=>document.getElementById('my_modal_1').showModal()}
             >  <Plus size={23} /> New products  </button>
-            <dialog id="my_modal_1" className=" w-[60%] h-[400px] rounded-xl ">
+            <dialog id="my_modal_1" className=" w-[33%]  h-[635px]  rounded-xl ">
        <div className=" ">
+          <CreateProductForm />
 
 
-
-         <div className="">
              <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-neutral   bottom-1 z-10 absolute right-1     ">Close</button>
-            </form>
-    </div>
+              <button className="btn btn-outline rouded-xl  top-0 z-10 absolute right-[2px]      ">  <X  />  </button>
+            </form> 
+    
   </div>
           </dialog>
         </div>
