@@ -5,13 +5,8 @@ import { Link } from "react-router-dom";
 const ProfileFeatures =  [{
   title:"Account Setting",
   Bio:" Default about your Pesonnal information "
-},{
-  title:"Notification",
-  Bio:" Default  information  about your Notiofiaction   "
-},{
-  title:"Membership Plan",
-  Bio:" Default about your Pesonnal information "
-},{
+},
+{
   title:"Password & Security",
   Bio:" you can change your  password   "
 }]
@@ -79,9 +74,12 @@ export const Profile = () => {
         
         <div className=" w-2/3  flex flex-col gap-4 ">
             <div className=" mx-auto flex justify-between items-center px-10 bg-white h-[130px] rounded-lg border-gray-100  border-[1px] shadow-xl w-[95%]  ">
-              <div className="flex gap-4 items-center">
-              <img src={user.profilePic} className=" cursor-pointer  " alt="" width={80} />
-              <span className="text-2xl font-bold"> Upload a New Photo
+              <div className="flex gap-4 items-center ">
+              <div className="w-20 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src={user.profilePic ? user.profilePic : url}  />
+        </div>              <span className="text-2xl font-bold"> Upload a New Photo
                   <h1 className="text-sm font-normal"> Profile-pic.jpg </h1>
 
               </span>

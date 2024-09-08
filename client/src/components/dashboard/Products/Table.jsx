@@ -1,8 +1,12 @@
-import React from 'react'
+import { Dot } from 'lucide-react';
 import { FoodStore } from '../../../zustand/store'
+import { useProductStore } from '../../../zustand/ProductStore';
 
-export const Table = () => {
+export const Table = ({data}) => {
   const {FoodList} = FoodStore();
+  const {loading} = useProductStore();
+  
+ 
 
   return (
     <div>
@@ -17,13 +21,13 @@ export const Table = () => {
           </label>
         </th>
         <th>Name</th>
-        <th>Descrption  </th>
+        <th> status  </th>
         <th>price</th>
         <th > </th>
       </tr>
     </thead>
     <tbody>
-        {FoodList.map((item,index) => <tr className={` cursor-pointer  ${index % 2 === 1 && " bg-gray-100 "}  `}>
+        {data.map((item,index) => <tr className={` cursor-pointer  ${index % 2 === 1 && " bg-gray-100 "}  `}>
         <th>
           <label>
             <input type="checkbox" className="checkbox" />
@@ -44,10 +48,8 @@ export const Table = () => {
             </div>
           </div>
         </td>
-        <td>
-            {item.description.substr(item.description.length/2)}
-          <br />
-          <span className="badge badge-ghost badge-sm">  {item.description.substr(item.description.length/2,item.description.length)}  </span>
+        <td className='text-sm'>
+        {!( index %3 === 1 ) ?  <div className="badge bg-green-300"><Dot /> Available </div> : <div className="badge bg-red-300"> <Dot />Not available </div>}
         </td>
         <td> {item.price}  </td>
         <th>

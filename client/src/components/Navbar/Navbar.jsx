@@ -73,7 +73,7 @@ export const Navbar = () => {
                     >  
 
                   
-  <img src={user.profilePic} className=" cursor-pointer " 
+  <img src={user.profilePic} className=" cursor-pointer rounded-full  " 
     onClick={() => setToogle(!toogle)}
               
   width={50} alt="" />

@@ -1,30 +1,35 @@
-import {ListFilter , Settings , Plus , List , LayoutGrid, X} from "lucide-react"
-import { useState } from "react";
+import {ListFilter , Settings , Plus , List , LayoutGrid} from "lucide-react"
+import { useEffect, useState } from "react";
 import { Cards } from "./Products/Cards";
 import { Table } from "./Products/Table";
-import CreateProductForm from "./Products/CreateProductForm";
+import {CreateProductForm} from "./Products/CreateProductForm";
+import { useProductStore } from "../../zustand/ProductStore";
+import axios from "axios";
+
+const API_URL =  "http://localhost:5000/api/posts";
+
  
 export const Products = () => {
   
   const [menu,setMenu] = useState("All")
   const [cards,setCards] = useState(1)
 
-/*  const handleImageChange = (e) => {
-		const file = e.target.files[0];
-		if (file) {
-			const reader = new FileReader();
 
-			reader.onloadend = () => {
-  //				setNewProduct({ ...newProduct, image: reader.result });
-          console.log(reader.result);
-};
+  const [data,setData] = useState([]);
 
-			reader.readAsDataURL(file); // base64
-		}
-
-	};
- */ 
   
+  useEffect(() => {
+    const fetchData = async () => {
+      const  response =   await axios.get("http://localhost:5000/api/posts"); 
+      setData(response.data.products);
+   }
+fetchData();
+
+  },[data]);
+
+
+
+
   
   return (
     <main className='w-full mx-auto  overflow-auto h-screen  '>
@@ -60,13 +65,10 @@ export const Products = () => {
             >  <Plus size={23} /> New products  </button>
             <dialog id="my_modal_1" className=" w-[33%]  h-[635px]  rounded-xl ">
        <div className=" ">
-          <CreateProductForm />
+          <CreateProductForm data={data} setData={setData}  />
 
 
-             <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-outline rouded-xl  top-0 z-10 absolute right-[2px]      ">  <X  />  </button>
-            </form> 
+            
     
   </div>
           </dialog>
@@ -98,8 +100,8 @@ export const Products = () => {
 
                
 
-              {cards === 2 ? <Cards /> : <Table />}            
-
+              {cards === 2 ? <Cards data={data}  /> : <Table data={data}  />}            
+            
               
       </section>
 

@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema(
 	{	
 		profilePic:{
 				type:String,
-				default:'https://avatar.iran.liara.run/public/boy?username=hatel'
+				default:'https://firebasestorage.googleapis.com/v0/b/blog-app-84202.appspot.com/o/_background.png?alt=media&token=eec1a47e-691b-412c-8069-877776cbf801'
 		},
 		email: {
 			type: String,

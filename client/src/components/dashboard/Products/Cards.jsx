@@ -1,5 +1,7 @@
 import {DollarSign, DollarSignIcon, Dot} from "lucide-react" 
 import { FoodStore } from "../../../zustand/store";
+import { useProductStore } from "../../../zustand/ProductStore";
+import { useState } from "react";
 
 
 
@@ -7,9 +9,15 @@ export const Cards = ({data}) => {
 
    const {FoodList} = FoodStore() ;
 
+
+   const {loading} = useProductStore();
+
+
+  
+
   return (
     <div className="grid  md:grid-cols-2 grid-cols-1 lg:grid-cols-3  gap-4  bg-gray-50  rounded-lg  ">
-        {FoodList.map((food,item) =>  <div className="rounded-lg cursor-pointer hover:w-[400px]   hover:transition-all hover:duration-500  card bg-base-100 w-96 shadow-xl">
+        {data.map((food,item) =>  <div className="rounded-lg cursor-pointer hover:w-[400px]   hover:transition-all hover:duration-500  card bg-base-100 w-96 shadow-xl">
   
     <img 
       src={food.image}

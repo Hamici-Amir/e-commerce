@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PlusCircle, Upload, Loader } from "lucide-react";
-import { useProductStore } from "../../../zustand/ProductStore";
+import { PlusCircle, Upload, Loader, X } from "lucide-react";
+import axios from "axios";
 
 const categories = ["Salad","Rolls","Deserts","Sandwich","Cake","Pure Veg","Pasta","Noodles"];
+const API_URL =  "http://localhost:5000/api/posts";
 
-const CreateProductForm = () => {
+
+export const CreateProductForm = ({data,setData}) => {
 	const [newProduct, setNewProduct] = useState({
 		name: "",
 		description: "",
@@ -13,15 +15,22 @@ const CreateProductForm = () => {
 		category: "",
 		image: "",
 	});
-	const { createProduct, loading } = useProductStore();
+	
+	const [loading,setLoading] = useState(false)
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true);
+		
 		try {
-			await createProduct(newProduct);
+			const res = await axios.post(`${API_URL}/create`, newProduct);
+			//		await createProduct(newProduct,setData,data);
+			setData([...data,res.data.post]);
 			setNewProduct({ name: "", description: "", price: "", category: "", image: "" });
-		} catch {
-			console.log("error creating a product");
+		} catch(err) {
+			console.log("error creating a product",err.message);
+		} finally{
+			setLoading(false);
 		}
 	};
 
@@ -33,7 +42,7 @@ const CreateProductForm = () => {
 			reader.onloadend = () => {
 				setNewProduct({ ...newProduct, image: reader.result });
 			};
-
+				
 			reader.readAsDataURL(file); // base64
 		}
 	};
@@ -45,9 +54,13 @@ const CreateProductForm = () => {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8 }}
 		>
+				 <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+              <button className="btn btn-outline rouded-xl  top-0 z-10 absolute right-[2px]      ">  <X  />  </button>
+            </form> 
 			<h2 className='text-2xl font-semibold mb-6 text-orange-600'>Create New Product</h2>
 
-			<form onSubmit={handleSubmit} className='space-y-4'>
+				<form  onSubmit={handleSubmit} className="space-y-4">
 				<div>
 					<label htmlFor='name' className='block text-sm font-medium text-black'>
 						Product Name
@@ -134,7 +147,7 @@ const CreateProductForm = () => {
 					</label>
 					{newProduct.image && <span className='ml-3 text-sm text-gray-400'>Image uploaded </span>}
 				</div>
-
+				<form action="dialog">
 				<button
 					type='submit'
 					className='w-full flex justify-center py-2 px-4 border rounded-md 
@@ -155,8 +168,9 @@ const CreateProductForm = () => {
 						</>
 					)}
 				</button>
-			</form>
+				</form>
+				</form>
+			
 		</motion.div>
 	);
 };
-export default CreateProductForm;
