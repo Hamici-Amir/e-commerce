@@ -3,30 +3,46 @@ import { useEffect, useState } from "react";
 import { Cards } from "./Products/Cards";
 import { Table } from "./Products/Table";
 import {CreateProductForm} from "./Products/CreateProductForm";
-import { useProductStore } from "../../zustand/ProductStore";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const API_URL =  "http://localhost:5000/api/posts";
+const categories = ["Salad","Rolls","Deserts","Sandwich","Cake","Pure Veg","Pasta","Noodles"];
 
- 
+
+
+
 export const Products = () => {
   
+  const [value,setValue] = useState("")
   const [menu,setMenu] = useState("All")
-  const [cards,setCards] = useState(1)
+  const [cards,setCards] = useState(2)
+  const [loading,setLoading] = useState(false)
 
+  const query = menu === "All" ? "" : menu == "Reserved"?`reserved=true`:"reserved=false" 
+  const query_1 = value === "" ? "" :`category=${value}` 
 
   const [data,setData] = useState([]);
 
-  
+
+
   useEffect(() => {
     const fetchData = async () => {
-      const  response =   await axios.get("http://localhost:5000/api/posts"); 
-      setData(response.data.products);
+
+      try {
+        const  response =   await axios.get(`${API_URL}?${query_1}&${query}`); 
+        setData(response.data.products);
+      } catch (error) {
+        toast.error(`${error.message}`)
+      } finally {
+
+      }
+    
+
    }
 fetchData();
 
-  },[data]);
-
+  },[data,menu]);
 
 
 
@@ -49,9 +65,16 @@ fetchData();
       clipRule="evenodd" />
   </svg>
 </label>
-								<div className=" flex gap-4">
-						<button className="btn btn-primary btn-outline text-xl  "> <ListFilter size={25} strokeWidth={2.5} /> Filter  </button>		
-            <button className="btn  btn-outline text-xl   "> <Settings  size={23} strokeWidth={2.5} /> Modify  </button>		
+								<div className=" w-60  rounded  ">
+                <select className="select select-primary w-full text-xl text-black max-w-xs"
+                  onChange={(v) => setValue(v.target.value)}
+                >
+  <option  selected value={""} >  categories </option>
+  {categories.map((category) => (
+							<option key={category} value={category}>
+								{category}
+							</option>))}
+</select>
 
 					</div>
 
@@ -78,9 +101,11 @@ fetchData();
           <div className="flex gap-4  ">
            
             {
-              ["All","Published","Draft"].map((item) => 
+              ["All","Reserved","Draft"].map((item) => 
                 <button className={`btn ${item == menu && "btn-neutral"} `}
-                  onClick={() => setMenu(item) }
+                  onClick={() => {
+                    setMenu(item)
+                  } }
                 >  {item}  </button>
             )
 
@@ -98,11 +123,11 @@ fetchData();
               
         </div>
 
-               
-
-              {cards === 2 ? <Cards data={data}  /> : <Table data={data}  />}            
-            
-              
+               {loading && <span className="loading loading-spinner loading-lg"></span>
+               }
+               {cards === 2 ? <Cards data={data} category={value}  /> : <Table data={data}  category={value} />}              
+              <button className="btn btn-info btn-wide mx-auto"> see more </button> 
+     
       </section>
 
 

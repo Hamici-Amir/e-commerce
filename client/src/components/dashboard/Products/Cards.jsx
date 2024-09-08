@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 
-export const Cards = ({data}) => {
+export const Cards = ({data,category}) => {
 
    const {FoodList} = FoodStore() ;
 
@@ -17,22 +17,25 @@ export const Cards = ({data}) => {
 
   return (
     <div className="grid  md:grid-cols-2 grid-cols-1 lg:grid-cols-3  gap-4  bg-gray-50  rounded-lg  ">
-        {data.map((food,item) =>  <div className="rounded-lg cursor-pointer hover:w-[400px]   hover:transition-all hover:duration-500  card bg-base-100 w-96 shadow-xl">
+        {data && [...data,...FoodList].filter((item) => (item.category === category || category === "")  ).map((food,item) =>  <div className="rounded-lg cursor-pointer hover:w-[400px]   hover:transition-all hover:duration-500  card bg-base-100 w-96 shadow-xl">
   
     <img 
       src={food.image}
       alt="Shoes" />
   
   <div className="card-body">
+
     <h2 className="card-title ">
-      {item %3 === 2 ?  <div className="badge bg-green-300"><Dot /> Available </div> : <div className="badge bg-red-300"> <Dot />Not available </div>}
+      {food.name}
     </h2>
 
-    <p className="mt-[10px]">If a dog chews shoes whose shoes does he choose?</p>
+    <p className="mt-[10px]"> {food.description} </p>
    
-    <div className="card-actions  justify-end  ">
+    <div className="card-actions  justify-between  ">
+    {food.Available ?  <div className="badge bg-green-300"><Dot /> Available </div> : <div className="badge bg-red-300"> <Dot />Not available </div>}
+
          <div className="flex gap-10 items-center ">
-         
+
          <p className="flex text-xl items-center">
          {food.price} دج 
           
@@ -49,7 +52,8 @@ export const Cards = ({data}) => {
   </div>
 </div> )}
            
-
+        
+      
 
 
 

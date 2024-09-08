@@ -41,7 +41,7 @@ export const getPost =  async (req,res) => {
         const startIndex = parseInt(req.query.startIndex) || 0;
         const limit = parseInt(req.query.limit) || 15;
 
-        
+
         const posts = await Post.find(  {
             ... (req.query.searchTerm  && {
                 $or:[
@@ -50,7 +50,8 @@ export const getPost =  async (req,res) => {
                 },
            ]
             }  ),
-            ...(req.query.category && {category:req.query.category}) 
+            ...(req.query.category && {category:req.query.category}) ,
+            ...(req.query.reserved && {Available:req.query.reserved})
 
      //     ...( req.user._id  && {autoecole:req.user._id  }  ),
     /*       ...(  req.query.accept == "false"  && {accepted:false}),*/
