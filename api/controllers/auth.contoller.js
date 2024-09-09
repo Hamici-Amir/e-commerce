@@ -22,6 +22,12 @@ export const signUp = async (req,res) => {
         if(existUser){
             return res.status(400).json({success:false,message: "email already exists"})
         }
+        const userName = await User.findOne({name});
+        if(userName){
+            return res.status(400).json({success:false,message: "user name already exists"})
+
+        }
+
         const hashPassword = await bcrypt.hash(password,15);
         const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
 

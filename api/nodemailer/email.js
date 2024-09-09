@@ -23,7 +23,7 @@ import { VERIFICATION_EMAIL_TEMPLATE } from './emailTemplates.js';
       if(err){
           console.log(err);
       }else{
-          console.log("sendn ")
+          console.log("sendn ",sucess,"err",err)
       }
     })
   }

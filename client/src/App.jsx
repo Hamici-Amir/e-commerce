@@ -76,6 +76,9 @@ function App() {
 export default App
 
 
+
+
+
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, user } = useAuthStore();
 

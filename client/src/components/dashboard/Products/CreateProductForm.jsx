@@ -147,7 +147,6 @@ export const CreateProductForm = ({data,setData}) => {
 					</label>
 					{newProduct.image && <span className='ml-3 text-sm text-gray-400'>Image uploaded </span>}
 				</div>
-				<form action="dialog">
 				<button
 					type='submit'
 					className='w-full flex justify-center py-2 px-4 border rounded-md 
@@ -168,7 +167,6 @@ export const CreateProductForm = ({data,setData}) => {
 						</>
 					)}
 				</button>
-				</form>
 				</form>
 			
 		</motion.div>

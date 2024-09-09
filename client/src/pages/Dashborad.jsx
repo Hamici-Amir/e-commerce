@@ -1,4 +1,4 @@
-import { Dash, List, Products, Profile, Request, Sidebar } from '../components/dashboard'
+import { Dash, List, Products, Profile, Sidebar, Users } from '../components/dashboard'
 import { useLocation } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import { Menu } from 'lucide-react'
@@ -30,7 +30,7 @@ const Dashboard = () => {
     
       {tab == '/' || tab=="dash" && <Dash />   }
       {tab == 'orders' && <List /> }
-      {tab == 'requests' && <Request /> }
+      {tab == 'users' && <Users /> }
       {tab == 'products' && <Products /> }
       {tab == 'profile'  && <Profile /> }
 

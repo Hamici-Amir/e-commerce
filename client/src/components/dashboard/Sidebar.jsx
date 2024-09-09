@@ -32,6 +32,7 @@ export const Sidebar = () => {
 
   },[location.search])
 
+  
 
 
     return (
@@ -71,7 +72,7 @@ export const Sidebar = () => {
                 onClick={() => setToogle(!toogle)}
             className={`flex gap-[15px] w-[95%] mx-auto cursor-pointer items-center    rounded-lg    hover:text-white  font-poppins  `}>
             <div className={`flex gap-[25px]  h-[80px] items-center  font-extrabold    "bg-white text-black  `}>
-        <div className="w-[50px] h-[50px] rounded-full ml-3   "> { user.profilePic &&  <img src={user.profilePic} className=" rounded-full   " alt=""   /> } </div>
+        <div className=" rounded-full ml-3 mask mask-circle    "> { user.profilePic &&  <img src={user.profilePic} className=" rounded-full   " alt=""   /> } </div>
         <div className="lg:flex items-center gap-[5px]  hidden  flex-grow">
 
           <div>
