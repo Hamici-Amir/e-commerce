@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 
-
-
-
 .Bg{
    background-image: url("./assets/frontend_assets/header_img.png");
 }
@@ -17,10 +14,31 @@ input::placeholder {
    font-size: large;
  }
 
-/* Hide scrollbar for all browsers */
-
  
- .hide-scrollbar::-webkit-scrollbar {
-   display: none; /* Safari and Chrome */
+
+ /* Track */
+
+ ::-webkit-scrollbar {
+   width: 11px;
  }
  
+ /* Track */
+ ::-webkit-scrollbar-track {
+   background: #fff; 
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: #5852D8;
+   border-radius: 15px; 
+ }
+ 
+
+ progress::-webkit-progress-bar {background-color: black; width: 100%;}
+ progress {background-color: black;}
+ 
+ /* value: */
+ progress::-webkit-progress-value {background-color: #5852D8 !important;}
+ progress::-moz-progress-bar {background-color: #5852D8 !important;}
+ progress {color: #5852D8;}
+

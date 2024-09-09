@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
+import { food_list } from "../assets/frontend_assets/assets";
 
 //const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
 const API_URL =  "http://localhost:5000/api/auth";
@@ -50,8 +51,8 @@ export const useAuthStore = create((set) => ({
 	logout: async () => {
 		set({ isLoading: true, error: null });
 		try {
-			await axios.post(`${API_URL}/logout`);
 			localStorage.removeItem('e-commerce-user')
+			await axios.post(`${API_URL}/logout`);
 			set({ user: null, isAuthenticated: false, error: null, isLoading: false });
 		} catch (error) {
 			set({ error: "Error logging out", isLoading: false });
@@ -73,7 +74,10 @@ export const useAuthStore = create((set) => ({
 		set({ isCheckingAuth: true, error: null });
 		try {
 			//const response = await axios.get(`${API_URL}/check-auth`);
-			const response = await JSON.parse(localStorage.getItem('e-commerce-user'))
+			const response = JSON.parse(localStorage.getItem('e-commerce-user'))
+			if (!response)
+			set({ user: response, isAuthenticated: false, isCheckingAuth: false });
+			else
 			set({ user: response, isAuthenticated: true, isCheckingAuth: false });
 		} catch (error) {
 			set({ error: null, isCheckingAuth: false, isAuthenticated: false });
@@ -108,3 +112,12 @@ forgotPassword: async (email) => {
 	},
 */
 }));
+
+export const FoodStore = create((set) => ({
+
+	FoodList : food_list,
+	
+
+
+
+}))

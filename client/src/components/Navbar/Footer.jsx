@@ -2,6 +2,7 @@ import React from 'react';
 
 export const Footer = () => {
   return (
+    <>
     <footer className="footer footer-center mt-[300px] font-bold bg-gray-800 text-primary-content p-10">
     <aside>
       <svg
@@ -64,5 +65,6 @@ export const Footer = () => {
       </div>
     </nav>
   </footer>
+    </>
   )
 }

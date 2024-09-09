@@ -8,6 +8,7 @@ export default {
     extend: {
       colors:{
         'custom-gray': '#747474 ' ,
+        'tomato':'tomato'
       }
     }
   },

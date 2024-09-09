@@ -6,11 +6,11 @@ import cookieParser from "cookie-parser";
 
 
 // Data base 
-import { connectDB } from "./db/connectDB.js";
+import { connectDB } from "./lib/connectDB.js";
 
 // Routes
 import AuthRouter from "./routes/Auth.route.js";
-
+import PostRouter from "./routes/Post.route.js";
 
 
 dotenv.config();
@@ -23,7 +23,7 @@ app.use(cookieParser()); // allows us to parse incoming cookies
 
 
 app.use("/api/auth/",AuthRouter);
-
+app.use("/api/posts",PostRouter);
 
 
 
