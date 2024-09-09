@@ -22,9 +22,12 @@ export const ExploreMenu = ({category,setCategory}) => {
                     key={index} 
                     className='hide-scrollbar cursor-pointer'
                     >
-                         <img src={item.menu_image} alt="" 
-                         className= {`w-80 min-w-20 rounded-full duration-75 ${category === item.menu_name? "border-[5px] border-tomato p-1":''} `} />   
-                         <p className='mt-3 text-custom-gray ml-8 text-xl cursor-pointer'>{item.menu_name}</p>
+                         <img 
+                         className={category===item.menu_name? "active": "" }
+                         src ={item.menu_image} 
+                         alt ="" 
+                         class = 'w-80 min-w-20 rounded duration-75 ' />   
+                         <p className = 'mt-3 text-custom-gray text-xl cursor-pointer'>{item.menu_name}</p>
 
                     </div>    
                  
