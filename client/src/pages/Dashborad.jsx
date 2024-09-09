@@ -44,7 +44,7 @@ const Dashboard = () => {
   <input id="my-drawer" type="checkbox" className="drawer-toggle "  />
   <div className="drawer-content">
     {/* Page content here */}
-    <label htmlFor="my-drawer" className=" fixed top-0 z-40  right-0 p-1 "> <Menu size={36} strokeWidth={3} /></label>
+    <label htmlFor="my-drawer" className=" fixed top-3 z-40  right-0 p-1 "> <Menu size={36} strokeWidth={3} /></label>
   </div>
   <div className="drawer-side">
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>

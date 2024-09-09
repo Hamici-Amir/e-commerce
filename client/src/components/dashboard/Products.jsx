@@ -33,7 +33,7 @@ export const Products = () => {
         const  response =   await axios.get(`${API_URL}?${query_1}&${query}`); 
         setData(response.data.products);
       } catch (error) {
-        toast.error(`${error.message}`)
+       // toast.error(`${error.message}`)
       } finally {
 
       }
@@ -50,9 +50,9 @@ fetchData();
   return (
     <main className='w-full mx-auto  overflow-auto h-screen  '>
 			
-      <div className=" flex px-1  gap-32 items-center w-full h-[68px]  border-b-2 ">
-					<h1 className="text-xl  font-bold  pl-2 "> Total Products : {"40"}  products </h1>
-					<label className="input input-bordered p-2 w-[530px] flex items-center gap-2">
+      <div className=" flex px-1  sm:gap-32 gap-3 items-center w-full h-[68px]  border-b-2 ">
+					<h1 className="sm:text-xl  text-xs sm:inline-block hidden  font-bold  pl-2 ">  Products:{data.length}  </h1>
+					<label className="input input-bordered p-2 sm:w-[530px] w-[200px] flex items-center gap-2">
   <input type="text" className="grow" placeholder="Search" />
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ fetchData();
   </svg>
 </label>
 								<div className=" w-60  rounded  ">
-                <select className="select select-primary w-full text-xl text-black max-w-xs"
+                <select className="select select-primary sm:w-full w-[150px] sm:text-xl text-black sm:max-w-xs max-w-28"
                   onChange={(v) => setValue(v.target.value)}
                 >
   <option  selected value={""} >  categories </option>
@@ -80,13 +80,13 @@ fetchData();
 
 			</div>
 
-      <section className="px-[100px] mt-10  flex flex-col gap-10  ">
+      <section className="sm:px-[100px] mt-10  flex flex-col gap-10  ">
         <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold btn bg-white"> Products </h1>
-            <button className="btn bg-blue-600 text-xl font-bold text-white hover:bg-blue-600 "
+            <h1 className="sm:text-2xl text-xl font-bold btn bg-white"> Products </h1>
+            <button className="btn   bg-blue-600 sm:text-xl  font-bold text-white hover:bg-blue-600 "
               onClick={()=>document.getElementById('my_modal_1').showModal()}
             >  <Plus size={23} /> New products  </button>
-            <dialog id="my_modal_1" className=" w-[33%]  h-[635px]  rounded-xl ">
+            <dialog id="my_modal_1" className=" sm:w-[33%] w-full  h-[635px]  rounded-xl ">
        <div className=" ">
           <CreateProductForm data={data} setData={setData}  />
 
@@ -98,11 +98,11 @@ fetchData();
         </div>
 
         <div className="flex justify-between items-center h-20 bg-gray-50">
-          <div className="flex gap-4  ">
+          <div className="flex sm:gap-4 gap-1 ">
            
             {
               ["All","Reserved","Draft"].map((item) => 
-                <button className={`btn ${item == menu && "btn-neutral"} `}
+                <button className={`btn ${item == menu && " btn-neutral"} `}
                   onClick={() => {
                     setMenu(item)
                   } }
@@ -111,8 +111,8 @@ fetchData();
 
             }
           </div>
-          <div className="flex gap-4">
-          <button className={`btn ${cards === 1 && "btn-neutral"}  `}
+          <div className="flex sm:gap-4">
+          <button className={`btn ${cards === 1 && "btn-neutral"} sm:inline hidden `}
            onClick={() => setCards(1) } > <List /> </button> 
           <button className={`btn ${cards === 2 && "btn-neutral"}  `}
           onClick={() => setCards(2) }
