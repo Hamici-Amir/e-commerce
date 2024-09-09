@@ -16,7 +16,7 @@ export const Cards = ({data,category}) => {
   
 
   return (
-    <div className="grid place-content-center mx-auto md:grid-cols-2 grid-cols-1 lg:grid-cols-3  sm:gap-4 gap-2  bg-gray-50  rounded-lg  ">
+    <div className="grid place-content-center mx-auto md:grid-cols-2 grid-cols-1 xl:grid-cols-3  sm:gap-4 gap-2  bg-gray-50  rounded-lg  ">
         {data && [...data,...FoodList].filter((item) => (item.category === category || category === "")  ).map((food,item) =>  <div className="rounded-lg cursor-pointer hover:w-[400px]   hover:transition-all hover:duration-500  card bg-base-100 w-96 shadow-xl">
   
     <img 

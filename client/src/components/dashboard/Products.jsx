@@ -50,7 +50,7 @@ fetchData();
   return (
     <main className='w-full mx-auto  overflow-auto h-screen  '>
 			
-      <div className=" flex px-1  sm:gap-32 gap-3 items-center w-full h-[68px]  border-b-2 ">
+      <div className=" flex px-1  sm:gap-32 gap-3 items-center w-full h-[68px] xl:justify-between  border-b-2 ">
 					<h1 className="sm:text-xl  text-xs sm:inline-block hidden  font-bold  pl-2 ">  Products:{data.length}  </h1>
 					<label className="input input-bordered p-2 sm:w-[530px] w-[200px] flex items-center gap-2">
   <input type="text" className="grow" placeholder="Search" />
@@ -80,9 +80,9 @@ fetchData();
 
 			</div>
 
-      <section className="sm:px-[100px] mt-10  flex flex-col gap-10  ">
-        <div className="flex justify-between items-center">
-            <h1 className="sm:text-2xl text-xl font-bold btn bg-white"> Products </h1>
+      <section className="xl:px-[100px] sm:px-[70px] mt-10  flex flex-col gap-10  ">
+        <div className="flex  justify-between items-center">
+            <h1 className="sm:text-2xl text-xl font-bold btn bg-white"> Products  </h1>
             <button className="btn   bg-blue-600 sm:text-xl  font-bold text-white hover:bg-blue-600 "
               onClick={()=>document.getElementById('my_modal_1').showModal()}
             >  <Plus size={23} /> New products  </button>

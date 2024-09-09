@@ -1,4 +1,4 @@
-
+import { parcel_icon } from "../../assets/admin_assets/assets"
 
 export const List = () => {
   return (
@@ -6,7 +6,7 @@ export const List = () => {
       <h1 className="text-xl font-bold ml-[50px] mt-7 ">Order Page</h1>
       <div className="flex  space-x-[20px]  h-[300px] border border-orange-600  ml-[50px] mr-[50px] mt-[50px] ">
       <div className="flex-1">
-        <img src="" alt="" /> 
+        <img src={parcel_icon} alt="" /> 
       </div>
        
 

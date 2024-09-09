@@ -38,7 +38,7 @@ export const Sidebar = () => {
    
     <div 
         id="drawer-side"
-        className="h-screen py-[20px] justify-between  bg-gray-100 sm:w-[50px] md:w-[80px] lg:w-[300px] flex border-r-black border-r-1 flex-col gap-10  "
+        className="h-screen py-[20px] justify-between  bg-gray-100 sm:w-[50px] md:w-[80px] xl:w-[300px] flex border-r-black border-r-1 flex-col gap-10  "
     >  
             
             <div className=" gap-1  flex flex-col">
@@ -55,7 +55,7 @@ export const Sidebar = () => {
                         key={index} >
                         <div className={`flex gap-[15px]  items-center py-[15px] px-[25px]  rounded-lg hover:bg-orange-600   hover:text-white ${tab == SideLinks[index] || index==0 && tab == '/' ? " bg-orange-600 text-white":"bg-white text-black"}  font-poppins  `}>
                             {icons[index]}
-                      <p className="lg:inline-block hidden text-lg font-semibold"> {item} </p>
+                      <p className="xl:inline-block hidden text-lg font-semibold"> {item} </p>
                      </div>  
 
                         </Link>
