@@ -9,5 +9,5 @@ export const NavLinks = ["","contacts"];
 
 
 
-export const SideFeatures = ["dashboard","Orders List","Manage Requests","products"];
+export const SideFeatures = ["dashboard","Orders List","Uesrs List","products"];
 export const SideLinks = ["dash","orders","requests","products"]

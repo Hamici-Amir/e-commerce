@@ -17,10 +17,13 @@ export const Products = () => {
   const [value,setValue] = useState("")
   const [menu,setMenu] = useState("All")
   const [cards,setCards] = useState(2)
-  const [loading,setLoading] = useState(false)
+  const [search,setSearch] = useState("")
+  
+
 
   const query = menu === "All" ? "" : menu == "Reserved"?`reserved=true`:"reserved=false" 
   const query_1 = value === "" ? "" :`category=${value}` 
+  const query_2 = search === "" ? "" : `searchTerm=${search}`
 
   const [data,setData] = useState([]);
 
@@ -30,7 +33,7 @@ export const Products = () => {
     const fetchData = async () => {
 
       try {
-        const  response =   await axios.get(`${API_URL}?${query_1}&${query}`); 
+        const  response =   await axios.get(`${API_URL}?${query_1}&${query}&${query_2}`); 
         setData(response.data.products);
       } catch (error) {
        // toast.error(`${error.message}`)
@@ -52,19 +55,23 @@ fetchData();
 			
       <div className=" flex px-1  sm:gap-32 gap-3 items-center w-full h-[68px] xl:justify-between  border-b-2 ">
 					<h1 className="sm:text-xl  text-xs sm:inline-block hidden  font-bold  pl-2 ">  Products:{data.length}  </h1>
-					<label className="input input-bordered p-2 sm:w-[530px] w-[200px] flex items-center gap-2">
-  <input type="text" className="grow" placeholder="Search" />
+          <form onSubmit={(e) => {e.preventDefault()}} >
+        	<label className="input input-bordered p-2 sm:w-[530px] w-[200px] flex items-center gap-2">
+  <input type="text" className="grow" placeholder="Search"
+      onChange={(e) => setSearch(e.target.value)}
+  />
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="h-8 w-8 opacity-70">
+    className="h-8 w-8 opacity-70 cursor-pointer ">
     <path
       fillRule="evenodd"
       d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
       clipRule="evenodd" />
   </svg>
 </label>
+</form>
 								<div className=" w-60  rounded  ">
                 <select className="select select-primary sm:w-full w-[150px] sm:text-xl text-black sm:max-w-xs max-w-28"
                   onChange={(v) => setValue(v.target.value)}
@@ -123,10 +130,22 @@ fetchData();
               
         </div>
 
-               {loading && <span className="loading loading-spinner loading-lg"></span>
-               }
-               {cards === 2 ? <Cards data={data} category={value}  /> : <Table data={data}  category={value} />}              
-              <button className="btn btn-info btn-wide mx-auto"> see more </button> 
+                 
+               { data.length === 0 ? <>  <div role="alert" className="alert alert-info">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    className="h-6 w-6 shrink-0 stroke-current">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+  </svg>
+  <span>  No product Search founded</span>
+</div> </> :    cards === 2   ? <Cards data={data} category={value}  /> : <Table data={data}  category={value} />}              
+              { data.length !== 0 &&  <button className="btn btn-info btn-wide mx-auto"> see more </button> }
      
       </section>
 
