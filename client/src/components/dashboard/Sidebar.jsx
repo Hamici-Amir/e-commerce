@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import { useState,useEffect } from "react";
 
 
-const icons = [<MdSpaceDashboard size={33}  />,<LuListTodo size={33} />,<Users size={33} />,<ShoppingBag size={33} />,<CgProfile size={33} />,<FaHome size={33} />,<CgLogOut size={33} />,]
+const icons = [<MdSpaceDashboard size={33}   />,<LuListTodo size={33} />,<Users size={33} />,<ShoppingBag size={33} />,<CgProfile size={33} />,<FaHome size={33} />,<CgLogOut  size={33} />,]
 
 
 
@@ -39,11 +39,10 @@ export const Sidebar = () => {
    
     <div 
         id="drawer-side"
-        className="h-screen py-[20px] justify-between  bg-gray-100 sm:w-[50px] md:w-[80px] xl:w-[300px] flex border-r-black border-r-1 flex-col gap-10  "
-    >  
+        className="h-screen py-[20px] justify-between  bg-gray-100 w-[80px] md:w-[80px] xl:w-[300px] flex border-r-black border-r-1 flex-col gap-10  " >  
             
             <div className=" gap-1  flex flex-col">
-            <div className=" text-orange-600 mt-10 mx-auto lg:text-5xl    text-sm  font-extrabold   ">
+            <div className=" text-orange-600 mt-10 mx-auto xl:text-5xl md:text-xl   text-sm  font-extrabold   ">
                     Tomato. 
                     
             </div>
@@ -71,9 +70,9 @@ export const Sidebar = () => {
             <div tabIndex={0} role="button"
                 onClick={() => setToogle(!toogle)}
             className={`flex gap-[15px] w-[95%] mx-auto cursor-pointer items-center    rounded-lg    hover:text-white  font-poppins  `}>
-            <div className={`flex gap-[25px]  h-[80px] items-center  font-extrabold    "bg-white text-black  `}>
-        <div className=" rounded-full ml-3 mask mask-circle    "> { user.profilePic &&  <img src={user.profilePic} className=" rounded-full   " alt=""   /> } </div>
-        <div className="lg:flex items-center gap-[5px]  hidden  flex-grow">
+            <div className={`flex gap-[25px]  h-[80px] items-center  font-extrabold    bg-white text-black  `}>
+        <div className=" rounded-full xl:ml-3 mask mask-circle w-20    "> { user.profilePic &&  <img src={user.profilePic} className=" rounded-full   " alt=""   /> } </div>
+        <div className="xl:flex items-center gap-[5px]  hidden  flex-grow">
 
           <div>
 

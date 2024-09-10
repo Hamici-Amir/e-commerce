@@ -142,7 +142,7 @@ export const Users = () => {
       {
         data?.map((user,index) => (
           <>
-          <div className="bg-white space-y-3 p-4 rounded-lg flex justify-between mx-auto w-[90%] shadow">
+          <div className= {`${index % 2 ===1 ?  "bg-white":"bg-gray-100"} space-y-3 p-4 rounded-lg flex justify-between mx-auto w-[99%] shadow`}>
           <div className="flex items-center gap-3">
             <div className="avatar">
               <div className="mask mask-circle h-12 w-12">
@@ -159,7 +159,7 @@ export const Users = () => {
 
             <div className="flex flex-col  gap-2">
             {user.isAdmin ?   <span className="badge badge-success">Admin</span>:<span className="badge badge-info">user</span>}  
-                       <p className="text-gray-600">         {user.lastLogin.substring(0,10) }
+                       <p className="text-gray-600 text-sm">         {user.lastLogin.substring(0,10) }
                        </p> 
             </div>
             
