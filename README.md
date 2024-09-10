@@ -1,6 +1,7 @@
 <h1 align="center"> e-commerce website  </h1>
 
-![Demo App](/client/public/Screenshot%20from%202024-09-09%2000-03-55.png)
+![Dashboard](/client/public/Screenshot%20from%202024-09-09%2000-03-55.png)
+![Admin panel](/client/public/Screenshot%20from%202024-09-09%2000-04-03.png)
 
 
 About This Course:
