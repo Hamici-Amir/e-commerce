@@ -69,8 +69,8 @@ export const Users = () => {
   </div>
              </div>
 
-             <div className="overflow-x-auto w-11/12 mx-auto border rounded-xl">
-  <table className={`table sm:${data.length ===0 ? "hidden" : "inline-block"} hidden `}>
+  <div className="overflow-x-auto w-11/12 mx-auto border rounded-xl">
+  <table className={`sm:table   hidden `}>
     {/* head */}
     <thead className="bg-gray-100  ">
       <tr>
@@ -140,7 +140,7 @@ export const Users = () => {
 </div>
     <div className=" sm:hidden grid grid-cols-1 gap-2 ">
       {
-        [1,2,3,4,5,6,7,8,9].map((user,index) => (
+        data?.map((user,index) => (
           <>
           <div className="bg-white space-y-3 p-4 rounded-lg flex justify-between mx-auto w-[90%] shadow">
           <div className="flex items-center gap-3">
@@ -152,13 +152,15 @@ export const Users = () => {
               </div>
             </div>
             <div>
-              <div className="font-bold"> Hatem_th </div>
-              <div className="font-semibold text-gray-500">  hatemtaleb@gmail.com </div>
+              <div className="font-bold"> {user.name} </div>
+              <div className="font-semibold text-[15px] text-gray-500">  {user.email} </div>
             </div>
           </div>          
 
             <div className="flex flex-col  gap-2">
-            {index %2 ==1 ?   <span className="badge badge-success">Admin</span>:<span className="badge badge-info">user</span>}             <p className="text-gray-600"> 2024-09-08 </p> 
+            {user.isAdmin ?   <span className="badge badge-success">Admin</span>:<span className="badge badge-info">user</span>}  
+                       <p className="text-gray-600">         {user.lastLogin.substring(0,10) }
+                       </p> 
             </div>
             
           </div>
