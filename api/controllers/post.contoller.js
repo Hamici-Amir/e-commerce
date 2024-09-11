@@ -40,7 +40,7 @@ export const getPost =  async (req,res) => {
     try {
         const startIndex = parseInt(req.query.startIndex) || 0;
         const limit = parseInt(req.query.limit) || 15;
-
+            
 
         const posts = await Post.find(  {
             ... (req.query.searchTerm  && {

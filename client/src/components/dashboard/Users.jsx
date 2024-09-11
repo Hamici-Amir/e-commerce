@@ -36,8 +36,8 @@ export const Users = () => {
   return (
     <main className="h-screen overflow-auto ">
       
-          <div className=" flex justify-between mt-12 sm:px-20  px-[2px] ">
-                <h1 className=" text-3xl text-black  ">  List   <span className="text-lg sm:ml-4 ml-1  text-gray-700 border "> {data?.length} users </span>  </h1>
+          <div className=" flex justify-between mt-12 sm:px-20 items-center  px-[2px] ">
+                <h1 className=" text-3xl text-black font-bold "> Users List    <span className="text-lg sm:ml-4 ml-1  text-gray-700 border "> {data?.length} users </span>  </h1>
           </div> 
 
          <section>  
