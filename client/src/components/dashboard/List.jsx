@@ -7,6 +7,7 @@ import{CardGrid} from "./CardGrid"
 import {Clock} from "lucide-react"
 
 
+const API_URL =  "http://localhost:5000/api/users";
 
  
 
@@ -28,7 +29,7 @@ export const List = () => {
         const  response =   await axios.get(`${API_URL}?sort=${filter}&searchTerm=${search}`); 
         setData(response.data.users);
       } catch (error) {
-        toast.error(`${error.message}`)
+      //  toast.error(`${error.message}`)
       }
     }
   
@@ -75,29 +76,23 @@ fetchData();
 
 
   return (
-    <main className="h-screen overflow-hidden">
+    <main className="h-screen overflow-auto">
       <div className="flex  justify-between mt-12 sm:px-20  px-[2px] ">
         <div className="flex-1">
           <h1 className="text-2xl font-bold">Order list </h1>
           <p className="text-[15px] text-gray-500">June 10,2024</p>
         </div>
         <div>
-        <input type="text" placeholder="Search" className="input input-bordered w-full md:max-w-xs max-w-[180px]" 
-      value={search}
-      onChange={(e) => {
-        
-        setSearch(e.target.value)
-        
-      }}
-  />
+   
         </div>
 
 
       </div>
 
-      <div className="flex justify-between mt-12 sm:px-20  px-[2px] items-center h-20 bg-gray-50">
-          <div className="flex sm:gap-4 gap-1 ">
+      <div className="flex justify-between mt-12 sm:px-20 sm:w-[95%] rounded-xl mx-auto px-[2px] items-center h-20 bg-gray-50">
+          <div className="flex sm:gap-4 gap-1 w-full justify-between  ">
            
+            <div>
             {
               ["All","Last item",].map((item) => 
                 <button className={`btn ${item == menu && " btn-neutral"} `}
@@ -108,10 +103,23 @@ fetchData();
             )
 
             }
+            </div>
+           
+                 <input type="text" placeholder="Search" className="input input-bordered w-full md:max-w-md  max-w-[180px]" 
+      value={search}
+      onChange={(e) => {
+        
+        setSearch(e.target.value)
+        
+      }}
+  />  
           </div>
       </div>    
          
-      <CardGrid /> 
+
+            {[1,2,3,4,5,6,7,8,9].map((item) =>       <CardGrid /> 
+)}
+
 
     </main>
   )
