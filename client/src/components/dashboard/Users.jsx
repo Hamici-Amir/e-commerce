@@ -41,7 +41,7 @@ export const Users = () => {
           </div> 
 
          <section>  
-            <div className="navbar bg-gray  sm:w-11/12 w-full sm:mx-auto rounded-2xl mt-1 ">
+  <div className="navbar bg-gray  sm:w-11/12 w-full sm:mx-auto rounded-2xl mt-1 ">
   <div className="flex-1 ">
     <a className="btn  sm:text-lg text-black "> <span className="md:flex hidden">Filter By :</span> {filter === 1 ? "created first":"Last login" } </a>
   </div>
