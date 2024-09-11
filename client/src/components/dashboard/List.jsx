@@ -41,9 +41,6 @@ export const List = () => {
   const [menu,setMenu] = useState("All")
   const [cards,setCards] = useState(2)
 
-  
-
-
   const query = menu === "All" ? "" : menu == "Reserved"?`reserved=true`:"reserved=false" 
   const query_1 = value === "" ? "" :`category=${value}` 
   const query_2 = search === "" ? "" : `searchTerm=${search}`
