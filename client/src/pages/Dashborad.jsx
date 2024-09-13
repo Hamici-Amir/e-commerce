@@ -18,6 +18,7 @@ const Dashboard = () => {
   },[location.search])
 
 
+  console.log(tab)
 
   return (
     <div className=' flex    '>
@@ -28,7 +29,7 @@ const Dashboard = () => {
     <div className=' w-full   '>
     
     
-      {tab == '/' || tab=="dash" && <Dash />   }
+      {(tab == "/" || tab=="dash") && <Dash />   }
       {tab == 'orders' && <List /> }
       {tab == 'users' && <Users /> }
       {tab == 'products' && <Products /> }
