@@ -4,7 +4,7 @@ import "./AreaCharts.scss";
 
 const AreaCharts = () => {
   return (
-    <section className="content-area-charts w-full">
+    <section className=" w-full">
       <AreaBarChart />
       
     </section>

@@ -14,7 +14,7 @@ import "./AreaCharts.scss";
 const data = [
   {
     month: "Jan",
-    loss: 0,
+    loss: 5.5,
     profit: 100,
   },
   {
@@ -58,7 +58,19 @@ const data = [
     profit: 78,
   },
   {
-    month:"Oct"
+    month:"Oct",
+    loss:70,
+    profit:80,
+  },
+  {
+    month:"Nov",
+    loss:20,
+    profit:50,
+  },
+  {
+    month:"Dec",
+    loss:10,
+    profit:100,
   }
 ];
 
@@ -90,7 +102,7 @@ const AreaBarChart = () => {
         </div>
       </div>
       <div className="bar-chart-wrapper">
-        <ResponsiveContainer width="200%" height="100%">
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={500}
             height={200}
@@ -143,7 +155,7 @@ const AreaBarChart = () => {
             />
             <Bar
               dataKey="loss"
-              fill="#e3e7fc"
+              fill="#00CED1"
               activeBar={false}
               isAnimationActive={false}
               barSize={24}

@@ -1,7 +1,7 @@
 .content-area-charts {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 16px;
+    
   
     @media (max-width: 992px) {
       grid-template-columns: 100%;
@@ -11,7 +11,7 @@
   // bar chart
   .bar-chart {
     background-color: var(--secondary-color);
-    padding: 16px 16px 6px 16px;
+    padding: 12px 12px 6px 12px;
     border-radius: 5px;
     box-shadow: var(--light-shadow1);
     position: relative;
