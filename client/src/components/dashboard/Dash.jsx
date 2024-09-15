@@ -88,7 +88,7 @@ export const Dash = () => {
     </div>
 
    
-    <div className="flex justify-between m-5">
+    <div className="flex justify-between m-10">
       <a className="btn  sm:text-lg text-black "> 
       <Calendar  /> 
         <span className="md:flex hidden gap-2">Last Updated : April 18,2024 </span>
