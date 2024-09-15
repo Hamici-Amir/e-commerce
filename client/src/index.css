@@ -19,7 +19,7 @@ input::placeholder {
  /* Track */
 
  ::-webkit-scrollbar {
-   width: 11px;
+   width: 10px;
  }
  
  /* Track */
@@ -34,11 +34,5 @@ input::placeholder {
  }
  
 
- progress::-webkit-progress-bar {background-color: black; width: 100%;}
- progress {background-color: black;}
  
- /* value: */
- progress::-webkit-progress-value {background-color: #5852D8 !important;}
- progress::-moz-progress-bar {background-color: #5852D8 !important;}
- progress {color: #5852D8;}
 
