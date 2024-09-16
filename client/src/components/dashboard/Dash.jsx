@@ -3,6 +3,7 @@ import { Calendar ,RefreshCw,Download, Users2, MoveUp, Package, UsersRound, Move
 import { useEffect, useState } from "react" ;
 import { useAuthStore } from "../../zustand/store";
 import AreaChart from "./AreaCharts/AreaChart"
+import { DashTable } from "./AreaCharts/DashTable";
 
 
 
@@ -100,14 +101,14 @@ export const Dash = () => {
       <div className="xl:w-[25%] mt-1 sm:mt-0 bg-gray-100  rounded-lg border-2 mx-auto">
           <h1 className="text-black text-2xl   px-4 pt-4 ">  Products Summary </h1>
            <h2 className="flex items-baseline p-4 pt-0">   <span className="text-7xl text-black font-bold  "> 67 </span> <p className="text-gray-600 text-xl">Products</p>  </h2>
-          <div className="w-[90%] mx-auto bg-red-600 flex mt-5 h-10">
+          <div className="w-[90%] mx-auto  flex mt-5 h-10">
                 <div className={` ${true ? "w-[50%]":""} bg-[#475be8] `}></div>
                 <div className={` ${true ? "w-[50%]":""} bg-cyan-400`}></div>
           </div>
-            <div className=" w-8 h-8 bg-[#475be8]  mt-4 ml-[5%] ">
+            <div className=" w-8 h-8 bg-[#475be8] rounded-lg   mt-4 ml-[5%] ">
             </div>
             <h1 className="text-xl px-4"> Products on Stock : {"45"}  </h1>
-            <div className=" w-8 h-8 bg-cyan-400  mt-4 ml-[5%] ">
+            <div className=" w-8 h-8 bg-cyan-400 rounded-lg   mt-4 ml-[5%] ">
             </div>
             <h1 className="text-xl px-4"> Products in order : {"22"}  </h1>
             <div>
@@ -118,6 +119,7 @@ export const Dash = () => {
 
     </div>
 
+    <DashTable />
   
 </div>
 

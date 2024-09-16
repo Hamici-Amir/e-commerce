@@ -14,63 +14,63 @@ import "./AreaCharts.scss";
 const data = [
   {
     month: "Jan",
-    loss: 5.5,
-    profit: 100,
+    users: 5.5,
+    search: 100,
   },
   {
     month: "Feb",
-    loss: 55,
-    profit: 85,
+    users: 55,
+    search: 85,
   },
   {
     month: "Mar",
-    loss: 35,
-    profit: 90,
+    users: 35,
+    search: 90,
   },
   {
     month: "April",
-    loss: 90,
-    profit: 70,
+    users: 90,
+    search: 70,
   },
   {
     month: "May",
-    loss: 55,
-    profit: 80,
+    users: 55,
+    search: 80,
   },
   {
     month: "Jun",
-    loss: 30,
-    profit: 50,
+    users: 30,
+    search: 50,
   },
   {
     month: "Jul",
-    loss: 32,
-    profit: 75,
+    users: 32,
+    search: 75,
   },
   {
     month: "Aug",
-    loss: 62,
-    profit: 86,
+    users: 62,
+    search: 86,
   },
   {
     month: "Sep",
-    loss: 55,
-    profit: 78,
+    users: 55,
+    search: 78,
   },
   {
     month:"Oct",
-    loss:70,
-    profit:80,
+    users:70,
+    search:80,
   },
   {
     month:"Nov",
-    loss:20,
-    profit:50,
+    users:20,
+    search:50,
   },
   {
     month:"Dec",
-    loss:10,
-    profit:100,
+    users:10,
+    search:100,
   }
 ];
 
@@ -146,7 +146,7 @@ const AreaBarChart = () => {
               formatter={formatLegendValue}
             />
             <Bar
-              dataKey="profit"
+              dataKey="search"
               fill="#475be8"
               activeBar={false}
               isAnimationActive={false}
@@ -154,8 +154,8 @@ const AreaBarChart = () => {
               radius={[4, 4, 4, 4]}
             />
             <Bar
-              dataKey="loss"
-              fill="#00CED1"
+              dataKey="users"
+              fill="red"
               activeBar={false}
               isAnimationActive={false}
               barSize={24}
