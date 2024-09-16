@@ -9,6 +9,10 @@
 .X{
    background-image: url("./assets//frontend_assets/food_12.png");
 }
+.BgC{
+  background-image: url("./assets/food.jpg");
+}
+
 input::placeholder {
    color: black;
    font-size: large;

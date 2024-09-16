@@ -45,8 +45,13 @@ export const Contacts = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white  rounded-lg mt-20">
-      <h2 className=" font-bold mb-4 flex items-center justify-center text-3xl">Contact Us</h2>
+    <section className="w-full   h-screen  bg-white flex   ">
+        <div className='w-1/3  bg-gray-500  bg-cover'>
+
+
+        </div>
+        <div className='w-2/3 h-full' >
+        <h2 className=" font-bold mb-4 flex items-center justify-center text-3xl">Contact Us</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
@@ -108,8 +113,13 @@ export const Contacts = () => {
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
-    </div>
+        </div>
+    </section >
   );
 }
 
 
+/* 
+
+
+*/
