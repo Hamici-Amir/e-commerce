@@ -9,17 +9,23 @@
 .X{
    background-image: url("./assets//frontend_assets/food_12.png");
 }
-input::placeholder {
-   color: black;
-   font-size: large;
- }
+.BgC{
+  background-image: url("./assets/food.jpg");
+}
+
+
+input::placeholder{
+  color: gray ;
+  font-size: 20px;
+ /* font-weight: bold;*/
+} 
 
  
 
  /* Track */
 
  ::-webkit-scrollbar {
-   width: 11px;
+   width: 10px;
  }
  
  /* Track */

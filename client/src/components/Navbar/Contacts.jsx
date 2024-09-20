@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-
-
-
-
+import{User} from "lucide-react" ;
 
 export const Contacts = () => {
   const [formData, setFormData] = useState({
@@ -45,71 +42,104 @@ export const Contacts = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white  rounded-lg mt-20">
-      <h2 className=" font-bold mb-4 flex items-center justify-center text-3xl">Contact Us</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+    <section className="w-full   h-screen  bg-white flex   ">
+        <div className='w-1/3  bg-gray-500  bg-cover'>
+
+
+        </div>
+        <div className='w-2/3 h-full' >
+        <h2 className=" font-bold mt-4 mb-4 flex items-center justify-center text-3xl">
+         GET IN TOUCH
+          </h2>
+      <p className='text-gray-400 text-2xl  mt-4 mb-4 flex items-center justify-center '>
+        24/07  We will answer your questions and problems
+      </p>
+      <form onSubmit={handleSubmit} className="space-y-4 mt-10">
+        <div className='flex'>
+        
           <input
+          placeholder='First Name'
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 h-[70px] focus:border-orange-600 font-bold text-3xl ml-10  block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+           <input
+          placeholder='Last Name'
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="mt-1 h-[70px] focus:border-orange-600 font-bold text-3xl ml-4 mr-10 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
+       
+       
         
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+        
+        <div className='flex items-center justify-center'>
+        
           <input
+            placeholder=' Email'
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
+          
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 ml-10 mr-10 h-[70px] focus:border-orange-600 font-bold text-3xl  block w-[1200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
         
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Subject</label>
+       
           <input
+            placeholder='Phone'
             type="text"
             id="subject"
             name="subject"
             value={formData.subject}
             onChange={handleChange}
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 h-[70px] focus:border-orange-600 font-bold text-3xl  ml-10 mr-10 block w-[1200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
         
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-          <textarea
+          
+          <input
+            placeholder='Describe your issue'
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
             required
             rows="4"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 mb-5 mx-10 focus:border-orange-600 font-bold text-3xl h-[120px] block w-[1200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
         
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-orange-600  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`w-[1200px] ml-10 mt-4 py-3 px-4 border border-transparent rounded-md shadow-sm text-white bg-orange-600  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
-    </div>
+        </div>
+    </section >
   );
 }
 
 
+/* 
+
+
+*/
