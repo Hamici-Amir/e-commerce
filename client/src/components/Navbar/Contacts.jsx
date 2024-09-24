@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import{User} from "lucide-react" ;
+import{Phone, Smartphone, User} from "lucide-react" ;
 import { FaTelegramPlane, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 export const Contacts = () => {
   const [formData, setFormData] = useState({
@@ -42,63 +42,74 @@ export const Contacts = () => {
   };
 
   return (
-    <section className="w-full   h-screen  bg-white flex   ">
-        <div className='w-1/3  bg-gray-500  bg-cover'>
-            <div className='mt-[650px]  mx-10'>
-            <div className=" text-orange-600   lg:text-5xl text-4xl  font-extrabold   ">
-                    Tomato. 
+    <section className="w-[90%] mx-auto  h-[650px]   mt-10 shadow-2xl rounded-xl border-2 justify-center  bg-white flex   ">
+        <div className='  X  flex justify-between flex-col rounded-xl  bg-cover'>
+            <div className='  mx-10'>
+          
+            
             </div>
-              <p className='text-xl '>At Tomato, we believe that great food should 
-                be just a click away. Explore a diverse menu featuring local
-                 favorites and international delights, all delivered straight
-                  to your door.</p>
-            </div>
-            <div className="flex space-x-5 items-center justify-center py-5 ">
-      <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" className="text-blue-500 border-spacing-1 hover:text-blue-700">
+            <div className="flex space-x-1   items-center justify-center py-1 ">
+      <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" className="btn-outline text-white btn  border-spacing-1 ">
         <FaTelegramPlane size={28} />
       </a>
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="btn-outline btn text-white ">
         <FaFacebook size={28} />
       </a>
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="btn-outline btn text-white ">
         <FaTwitter size={28} />
       </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900">
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="btn-outline  btn text-white ">
         <FaLinkedin size={28} />
       </a>
     </div>    
 
         </div>
-        <div className='w-2/3 h-full' >
-        <h2 className=" font-bold mt-4 mb-4 flex items-center justify-center text-3xl">
+        <div className=' ' >
+        <h2 className=" font-bold mt-4 mb-4 flex items-center mx-10 text-3xl">
          GET IN TOUCH
           </h2>
-      <p className='text-gray-400 text-2xl  mt-4 mb-4 flex items-center justify-center '>
+      <p className='text-gray-400 text-xl mx-10   mt-4 mb-4 flex items-center  '>
         24/07  We will answer your questions and problems
       </p>
       <form onSubmit={handleSubmit} className="space-y-4 mt-10">
-        <div className='flex'>
+        <div className='flex items-center justify-between mx-10   '>
           
-          <input
-            placeholder='First Name'
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="mt-1 h-[70px] focus:border-orange-600 font-bold text-3xl ml-10  block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
-           <input
-          placeholder='Last Name'
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="mt-1 h-[70px] focus:border-orange-600 font-bold text-3xl ml-4 mr-10 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
+        <label className="input input-bordered input-primary border-2  w-[49%] flex items-center focus:border-indigo-700 h-[70px] focus:border-4 gap-2"
+          
+          >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      className="h-8 w-8 opacity-70">
+      <path
+      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+      <path
+      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+    <input type="text" 
+                  className="w-full "
+  
+    placeholder="First Name" />
+  </label>  
+           <label className="input input-bordered input-primary border-2 w-[49%] flex items-center focus:border-indigo-700 h-[70px] focus:border-4 gap-2"
+          
+          >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      className="h-8 w-8 opacity-70">
+      <path
+      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+      <path
+      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+    </svg>
+    <input type="text" 
+                  className="w-full "
+  
+    placeholder="Last Name" />
+  </label>
         </div>
        
        
@@ -106,51 +117,48 @@ export const Contacts = () => {
         
         <div className='flex items-center justify-center border-collapse input-container'>
           
-          <input
-            placeholder=' Email'
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+        <label className="input input-bordered input-primary border-2  w-[1200px] flex items-center focus:border-indigo-700 h-[70px] focus:border-4 gap-2"
           
-            required
-            className="input-field mt-1 ml-10 mr-10 h-[70px] focus:border-orange-600 font-bold text-3xl  block w-[1200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
+        >
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    fill="currentColor"
+    className="h-8 w-8 opacity-70">
+    <path
+      d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+    <path
+      d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+  </svg>
+  <input type="text" 
+                className="w-full "
+
+  placeholder="Email" />
+</label>
+
         </div>
         
         <div>
-       
-          <input
-            placeholder='Phone'
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            className="mt-1 h-[70px] focus:border-orange-600 font-bold text-3xl  ml-10 mr-10 block w-[1200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
+      
+       <label className="input input-bordered input-primary mx-10 border-2    w-[1200px] flex items-center focus:border-indigo-700 h-[70px] focus:border-4 gap-2"
+          
+          >
+<Smartphone size={32} color="gray" strokeWidth={3} />    <input type="text" 
+                  className="w-full "
+  
+    placeholder="phone" />
+  </label>
         </div>
         
-        <div>
-          
-          <input
-            placeholder='Describe your issue'
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows="4"
-            className="mt-1 mb-5 mx-10 focus:border-orange-600 font-bold text-3xl h-[120px] block w-[1200px] px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          />
+        <div className=''>
+        <textarea className="textarea textarea-primary textarea-lg w-[1200px] mx-10 " placeholder="Describe you issue"></textarea>
+         
         </div>
         
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-[1200px] ml-10 mt-4 py-3 px-4 border border-transparent rounded-md shadow-sm text-white bg-orange-600  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`w-[1200px] ml-10 mt-4 py-3 px-4 border border-transparent rounded-md shadow-sm text-white  btn  bg-indigo-700 hover:bg-indigo-700 focus:outline-none    ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>

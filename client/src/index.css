@@ -7,7 +7,7 @@
    background-image: url("./assets/hero.png");
 }
 .X{
-   background-image: url("./assets//frontend_assets/food_12.png");
+   background-image: url("./assets/conffff.jpg");
 }
 .BgC{
   background-image: url("./assets/food.jpg");
@@ -17,6 +17,7 @@
 input::placeholder{
   color: gray ;
   font-size: 20px;
+  
  /* font-weight: bold;*/
 } 
 
@@ -40,5 +41,8 @@ input::placeholder{
  }
  
 
- 
+ html {
+  scroll-behavior: smooth;
+}
+
 

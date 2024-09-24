@@ -25,14 +25,16 @@ const Home = () => {
 
       </p>
       <div className="px-[78px]" >
-      <button class="bg-white   text-[#49557e] w-40  mt-2  font-bold   py-4  rounded-[30px] ">
+      <a  class="bg-white btn    btn-outline    text-[#49557e] w-40  mt-2  font-bold   py-4  rounded-[20px] "
+            href='#p'
+      >
       View Menu
-    </button>
+    </a>
       </div>
       
     </div>
     <ExploreMenu category={category} setCategory={setCategory }/>
-      <hr className='py-10 w-[80%] mx-auto ' />
+      <hr className='py-2 w-[80%]   mx-auto ' />
     <FoodDisplay category={category} />
     
     </>

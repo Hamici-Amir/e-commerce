@@ -6,19 +6,20 @@ export const FoodDisplay = ({category}) => {
     const {FoodList} = FoodStore();
   
     return (
-    <div className="px-[160px]  
+    <div className="px-[10px]  
           w-full flex flex-col gap-4 ">
-        <h1 className="text-4xl font-semibold" >
+        <h1 className="text-4xl font-semibold px-2.5 " >
         Top dishes near you 
             </h1> 
-                <div className="gap-16 cursor-pointer col-span-4 mx-auto justify-between  grid grid-cols-4 grid-flow-row-dense   ">
+                <div className="gap-4 cursor-pointer col-span-1 mx-auto   grid grid-cols-4 grid-flow-row-dense   ">
                 {
                     FoodList.filter((item) => (item.category === category || category === "All")  ).map((item) => (
 
 
-<div className="   card  w-[350px]  shadow-xl">
+<div className="   card  w-[400px]  shadow-xl">
   <figure>
-    <img
+    <img 
+      width={400}
       src={item.image}   
       alt="Shoes" />
   </figure>

@@ -9,12 +9,14 @@ import { menu_list } from '../../assets/frontend_assets/assets'
 export const ExploreMenu = ({category,setCategory}) => {
   return (
     <div className='h-[400px] mt-10 
-          w-[80%] flex flex-col gap-4 mx-auto  '>
+          w-[90%] flex flex-col gap-4 mx-auto scroll-smooth  ' 
+            id='p'
+          >
         <h1 className='text-3xl font-semibold  '>Explore our menu </h1>
         <p className='max-w-2xl '>Choose from diverse menu  featuring  a delectable array of dishes .
              Our mission is to satisfy your cravings and elevate your dining experience , one delicious meal at a time .   </p>
 
-        <div className='flex justify-between items-center gap-8 ml-5 max-w-full overflow-x-auto hide-scrollbar '>
+        <div className='flex justify-between items-center gap-4  max-w-full overflow-x-auto hide-scrollbar '>
             {menu_list.map((item,index) => {
                 return(
                     <div 

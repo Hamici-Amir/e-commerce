@@ -45,7 +45,7 @@ function App() {
                <Route path="/Contacts" element=
           {
             <>
-            
+                <Navbar />
               <Contacts />
               
             </>
