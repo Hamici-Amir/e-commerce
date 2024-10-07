@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'; 
+
 import { Link } from "react-router-dom"
 import { NavFeatures , NavLinks } from "../../constants"
 import { useState } from "react";
@@ -32,20 +32,8 @@ export const Navbar = () => {
             <div className=" text-orange-600   lg:text-5xl text-4xl  font-extrabold   ">
                     Tomato. 
             </div>
-            <div className=" hidden  items-center relative gap-3 xl:flex">
-                
-                <input 
-                type="text" 
-                className="w-[500px] h-[60px] border-none  px-5 bg-[#E4E4E4] rounded-[50px] "
-                placeholder="Search anything..."
-                />
-                <button className="bg-[#fff] cursor-pointer  left-[376px] text-black absolute top-[5px] w-[120px] h-[50px] rounded-[50px] font-bold text-2xl  "> Search </button>
-               
-            </div>
-
-            <div className=" w-[370px] gap-[40px] flex items-center  text-[#49557e] ">
-            
-                {NavFeatures.map((item,index) => (
+            <div className='flex gap-4'>
+            {NavFeatures.map((item,index) => (
                 <Link   key={index} to={`/${NavLinks[index]}`} >
                         <div className={`    transition-transform ${ menu == item ? "underline":""}  text-xl text-[#49557e] `} 
                             onClick={() => setMenu(item)}
@@ -55,6 +43,13 @@ export const Navbar = () => {
                 </Link>
 
             ) )}
+
+            </div>
+          
+
+            <div className=" w-[370px] gap-[40px] flex items-center  text-[#49557e] ">
+            
+                
                                 
             {
                 !isAuthenticated ?
@@ -84,7 +79,7 @@ export const Navbar = () => {
                     
                 >    
                   
-                <ul  class="dropdown-content menu fixed bg-base-100  rounded-box  right-0  z-50 w-60 p-2 shadow">
+                <ul  class="dropdown-content menu fixed bg-base-100   rounded-box  right-0  z-50 w-60 p-2 shadow">
                   <li>  <div> {user.email} </div> </li>
                   <li>  <div> {user.name} </div> </li>
 
